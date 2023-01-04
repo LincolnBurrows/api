@@ -113,26 +113,157 @@ post	 https://yunying.digitgolf.com/golfclub/addhitpos
 
 ```
 {
-	clubId:'100', //门店id
+    clubId:'100', //门店id
     posname: '包间2', //打位名称
+    type:'0', //0 普通打位 1 无人值守
     posimg: "https://yunying.digitgolf.com/images/8c6xabkfnin.jpg", // 打位照片
-    price: '0.01', // 价格
-	startTime:'00:00:00', // 开始时间
-	endTime:'24:00:00', //结束时间
-	type:'0', //0 普通打位 1 无人值守
-	status: '0' //0开启 1关闭
+    priceList:[
+      {
+        week: 1,  #星期一
+        status:1,  #1开启 0 关闭	
+        time: [
+          {
+            time_id:'xxxxxxxx', #时间段id, 随机生成多位字符串id， 比如 Math.random().toString(36).substr(2, 15)
+            startTime: 08:00, #开始时间
+            endTime: 16:00, #结束时间
+            price: 40  #价格
+          },
+          {
+            time_id:'xxxxxxxx',
+            startTime: 16:00,
+            endTime: 24:00,
+            price: 60
+          }
+        ]
+      },
+      {
+        week: 2,
+        status:1,
+        time: [
+          {
+            time_id:'xxxxxxxx', #时间段id, 随机生成多位字符串id， 比如 Math.random().toString(36).substr(2, 15)
+            startTime: 08:00, #开始时间
+            endTime: 16:00, #结束时间
+            price: 40  #价格
+          },
+          {
+            time_id:'xxxxxxxx',
+            startTime: 16:00,
+            endTime: 24:00,
+            price: 60
+          }
+        ]
+      },
+      {
+        week: 3,
+        status:1,
+        time: [
+          {
+            time_id:'xxxxxxxx', #时间段id, 随机生成多位字符串id， 比如 Math.random().toString(36).substr(2, 15)
+            startTime: 08:00, #开始时间
+            endTime: 16:00, #结束时间
+            price: 40  #价格
+          },
+          {
+            time_id:'xxxxxxxx',
+            startTime: 16:00,
+            endTime: 24:00,
+            price: 60
+          }
+        ]
+      },
+      {
+        week: 4,
+        status:1,
+        time: [
+           {
+            time_id:'xxxxxxxx', #时间段id, 随机生成多位字符串id， 比如 Math.random().toString(36).substr(2, 15)
+            startTime: 08:00, #开始时间
+            endTime: 16:00, #结束时间
+            price: 40  #价格
+          },
+          {
+            time_id:'xxxxxxxx',
+            startTime: 16:00,
+            endTime: 24:00,
+            price: 60
+          }
+        ]
+      },
+      {
+        week: 5,
+        status:1,
+        time: [
+          {
+            time_id:'xxxxxxxx', #时间段id, 随机生成多位字符串id， 比如 Math.random().toString(36).substr(2, 15)
+            startTime: 08:00, #开始时间
+            endTime: 16:00, #结束时间
+            price: 40  #价格
+          },
+          {
+            time_id:'xxxxxxxx',
+            startTime: 16:00,
+            endTime: 24:00,
+            price: 60
+          }
+        ]
+      },
+      {
+        week: 6,
+        status:1,
+        time: [
+          {
+            time_id:'xxxxxxxx', #时间段id, 随机生成多位字符串id， 比如 Math.random().toString(36).substr(2, 15)
+            startTime: 08:00, #开始时间
+            endTime: 16:00, #结束时间
+            price: 40  #价格
+          },
+          {
+            time_id:'xxxxxxxx',
+            startTime: 16:00,
+            endTime: 24:00,
+            price: 60
+          }
+        ]
+      },
+      {
+        week: 7,
+        status:1,
+        time: [
+          {
+            time_id:'xxxxxxxx', #时间段id, 随机生成多位字符串id， 比如 Math.random().toString(36).substr(2, 15)
+            startTime: 08:00, #开始时间
+            endTime: 16:00, #结束时间
+            price: 40  #价格
+          },
+          {
+            time_id:'xxxxxxxx',
+            startTime: 16:00,
+            endTime: 24:00,
+            price: 60
+          }
+        ]
+      }
+    ]
 }
 ```
 
 ```
 {
-  	code:0,
-  	msg:'position add success'
+    code:0,
+    msg:'position add success'
 }
-
+{
+    code:1,
+    msg:'club not exist'
+}
 {
   code:2,
   msg:'ShareGolf DB error'
+}
+{
+    code:3,
+    msg:'clubId err'
 }
 ```
 
