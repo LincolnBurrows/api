@@ -1847,15 +1847,139 @@ post   https://yunying.digitgolf.com/golfclub/edithitpos
 
 ```
 {
-	posid:'lzrzpm0dk1', //打位id
-	clubId:'100', //门店id
+    posid:'lzrzpm0dk1', //打位id
+    clubId:'100', //门店id
     posname: '包间2', //打位名称
     posimg: "https://yunying.digitgolf.com/images/8c6xabkfnin.jpg", // 打位照片
-    price: '0.01', // 价格
-	startTime:'00:00:00', // 开始时间
-	endTime:'24:00:00', //结束时间
-	type:'0', //0 普通打位 1 无人值守
-	status: '0' //0开启 1关闭
+    type:'0', //0 普通打位 1 无人值守
+    priceList: [
+      {
+        week: 1,  //星期一
+        status:1,  //1开启 0 关闭	
+        time: [
+         {
+            time_id:Math.random().toString(36).substring(2, 15), //时间段id, 随机生成多位字符串id， 比如 Math.random().toString(36).substr(2, 15)
+            startTime: '08:00', //开始时间
+            endTime: '16:00', //结束时间
+            price: 40  //价格
+          },
+          {
+            time_id:Math.random().toString(36).substring(2, 15),
+            startTime: '16:00',
+            endTime: '24:00',
+            price: 60
+          }
+        ]
+      },
+      {
+        week: 2,
+        status:1,
+        time: [
+          {
+            time_id:Math.random().toString(36).substring(2, 15), //时间段id, 随机生成多位字符串id， 比如 Math.random().toString(36).substr(2, 15)
+            startTime: '08:00', //开始时间
+            endTime: '16:00', //结束时间
+            price: 40  //价格
+          },
+          {
+            time_id:Math.random().toString(36).substring(2, 15),
+            startTime: '16:00',
+            endTime: '24:00',
+            price: 60
+          }
+        ]
+      },
+      {
+        week: 3,
+        status:1,
+        time: [
+         {
+            time_id:Math.random().toString(36).substring(2, 15), //时间段id, 随机生成多位字符串id， 比如 Math.random().toString(36).substr(2, 15)
+            startTime: '08:00', //开始时间
+            endTime: '16:00', //结束时间
+            price: 40  //价格
+          },
+          {
+            time_id:Math.random().toString(36).substring(2, 15),
+            startTime: '16:00',
+            endTime: '24:00',
+            price: 60
+          }
+        ]
+      },
+      {
+        week: 4,
+        status:1,
+        time: [
+          {
+            time_id:Math.random().toString(36).substring(2, 15), //时间段id, 随机生成多位字符串id， 比如 Math.random().toString(36).substr(2, 15)
+            startTime: '08:00', //开始时间
+            endTime: '16:00', //结束时间
+            price: 40  //价格
+          },
+          {
+            time_id:Math.random().toString(36).substring(2, 15),
+            startTime:'16:00',
+            endTime: '24:00',
+            price: 60
+          }
+        ]
+      },
+      {
+        week: 5,
+        status:1,
+        time: [
+          {
+            time_id:Math.random().toString(36).substring(2, 15), //时间段id, 随机生成多位字符串id， 比如 Math.random().toString(36).substr(2, 15)
+            startTime: '08:00', //开始时间
+            endTime: '16:00', //结束时间
+            price: 40  //价格
+          },
+          {
+            time_id:Math.random().toString(36).substring(2, 15),
+            startTime: '16:00',
+            endTime: '24:00',
+            price: 60
+          }
+        ]
+      },
+      {
+        week: 6,
+        status:1,
+        time: [
+          {
+            time_id:Math.random().toString(36).substring(2, 15), //时间段id, 随机生成多位字符串id， 比如 Math.random().toString(36).substr(2, 15)
+            startTime: '08:00', //开始时间
+            endTime: '16:00', //结束时间
+            price: 40  //价格
+          },
+          {
+            time_id:Math.random().toString(36).substring(2, 15),
+            startTime: '16:00',
+            endTime: '24:00',
+            price: 60
+          }
+        ]
+      },
+      {
+        week: 7,
+        status:1,
+        time: [
+          {
+            time_id:Math.random().toString(36).substring(2, 15), //时间段id, 随机生成多位字符串id， 比如 Math.random().toString(36).substr(2, 15)
+            startTime: '08:00', //开始时间
+            endTime: '16:00', //结束时间
+            price: 40  //价格
+          },
+          {
+            time_id:Math.random().toString(36).substring(2, 15),
+            startTime: '16:00',
+            endTime: '24:00',
+            price: 60
+          }
+        ]
+      }
+    ]
 }
 ```
 
