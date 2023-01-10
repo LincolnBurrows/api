@@ -2081,14 +2081,14 @@ post   http://yunying.digitgolf.com/golfcard/edit
  }
 ```
 
-#### 28 修稿某个高尔夫卡订单状态
+#### 28 修改某个高尔夫卡订单状态
 
 get  http://yunying.digitgolf.com/gcorder/editgolfcardorder?_id=634932d0e748a93a795c7bd9&status=6 
 
 ```
 {
 	_id:'634932d0e748a93a795c7bd9',
-	status:'6' // 订单状态 0：待付款 1：待使用 2：已取消 3：订单已过期 注：过期未使用也算已使用 5：已退款 6:退款中（已使用次数的卡需后台审批）
+	status:'6' // 订单状态 0：待付款 1：待使用 2：已取消 3：订单已过期 注：过期未使用也算已使用 5：已退款 6:退款中（已使用次数的卡需后台审批）7:售后退款已删除 8 审批失败
 }
 ```
 
