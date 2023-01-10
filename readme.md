@@ -3008,3 +3008,103 @@ get  https://yunying.digitgolf.com/users/getOrderRefundInfo?clubId=101&openid=o9
 }
 ```
 
+#### 55 获取某天门店教练账单
+
+get https://yunying.digitgolf.com/w/getClubCoachBillofDay?orderDate=2022-12-13&clubId=101&pageIndex=1&pageSize=1
+
+```
+{
+	orderDate:2022-12-13, //要查询的日期
+	clubId:101, //门店id
+	pageIndex:1, // 页码
+	pageSize:1, // 每页显示数量
+}
+```
+
+```
+{
+    "code": 0,  //成功
+    "msg": "success",
+    "count": 2, // 要查询日期账单总数量
+    "data": [
+        {
+            "xtype": 0, // 类型, 预约课程0或者视频课程1
+            "clubId": "101", // 门店id
+            "clubName": "北京中通数字高尔夫体验店", //门店名称
+            "coachName": "亨利克", // 教练名
+            "coachId": "63637ef4cf86df5a1cd7ec8a", // 教练id，coach数据库里面的_id
+            "orderId": "202212131119487287772446", //预约订单id
+            "videoCourseId": "", //视频课程订单id
+            "orderDate": "2022-12-13", //要查询的日期,也即是预约订单的日期
+            "orderTime": "2022-12-13 11:19:46", //下预约订单的时间点
+            "startTime": "2022-12-13 18:00",  //订单开始时间
+            "endTime": "2022-12-13 19:00", //订单结束时间
+            "duration": "1", //订单时长
+            "totalFee": 200, //订单总价
+            "dividFee": 50, //分成金额
+            "TimeStamp": 1673338501163, //时间戳
+            "_id": "63bd1ec667bbc82748b53af8" //_id
+        }
+    ]
+}
+或
+{
+	code:1, // 失败
+	msg:'fail'
+}
+```
+
+#### 56 获取门店某个预约订单详情
+
+get   https://yunying.digitgolf.com/w/getClubOrderDetail?clubId=101&orderId=202212131119487287772446
+
+```
+{
+	clubId:101, //门店id 
+	orderId:202212131119487287772446 // 预约订单id
+}
+```
+
+```
+{
+    "code": 0, //成功，下面参数示意可参看前面解释
+    "msg": "success",
+    "data": {
+        "xtype": 1,
+        "orderId": "202212131119487287772446",
+        "transaction_id": "",
+        "openid": "o99bm4vtJLtZScdrJcEr73zz0FiQ",
+        "nickName": "微信用户",
+        "phone": "15176060615",
+        "clubId": "101",
+        "clubName": "北京中通数字高尔夫体验店",
+        "payType": "0",
+        "coachId": "63637ef4cf86df5a1cd7ec8a",
+        "coachName": "亨利克",
+        "coachLevel": "1",
+        "coachGender": "",
+        "serviceType": "私教课",
+        "posid": "u15po15atgi",
+        "hitposition": "影音间",
+        "totalFee": 200.01,
+        "orderDate": "2022-12-13",
+        "orderTime": "2022-12-13 11:19:46",
+        "startTime": "2022-12-13 18:00",
+        "endTime": "2022-12-13 19:00",
+        "duration": "1",
+        "payManner": 4,
+        "golfcardOrderId": "202211041401118606814096",
+        "status": 3,
+        "ing": 0,
+        "remarks": "",
+        "TimeStamp": 1670901453100,
+        "_id": "6397ef541caee818586982c3"
+    }
+}
+或
+{
+	code:1, //失败
+	msg:'fail'
+}
+```
+
