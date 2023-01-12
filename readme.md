@@ -3008,7 +3008,7 @@ get  https://yunying.digitgolf.com/users/getOrderRefundInfo?clubId=101&openid=o9
 }
 ```
 
-#### 55 获取某天门店教练账单
+#### 55 获取门店教练某天的账单,以教练基准分页
 
 get https://yunying.digitgolf.com/w/getClubCoachBillofDay?orderDate=2022-12-13&clubId=101&pageIndex=1&pageSize=1
 
@@ -3017,33 +3017,43 @@ get https://yunying.digitgolf.com/w/getClubCoachBillofDay?orderDate=2022-12-13&c
 	orderDate:2022-12-13, //要查询的日期
 	clubId:101, //门店id
 	pageIndex:1, // 页码
-	pageSize:1, // 每页显示数量
+	pageSize:2, // 每页显示数量
 }
 ```
 
 ```
 {
-    "code": 0,  //成功
+    "code": 0,
     "msg": "success",
-    "count": 2, // 要查询日期账单总数量
+    "coachCount": 4,
     "data": [
         {
-            "xtype": 0, // 类型, 预约课程0或者视频课程1
-            "clubId": "101", // 门店id
-            "clubName": "北京中通数字高尔夫体验店", //门店名称
-            "coachName": "亨利克", // 教练名
-            "coachId": "63637ef4cf86df5a1cd7ec8a", // 教练id，coach数据库里面的_id
-            "orderId": "202212131119487287772446", //预约订单id
-            "videoCourseId": "", //视频课程订单id
-            "orderDate": "2022-12-13", //要查询的日期,也即是预约订单的日期
-            "orderTime": "2022-12-13 11:19:46", //下预约订单的时间点
-            "startTime": "2022-12-13 18:00",  //订单开始时间
-            "endTime": "2022-12-13 19:00", //订单结束时间
-            "duration": "1", //订单时长
-            "totalFee": 200, //订单总价
-            "dividFee": 50, //分成金额
-            "TimeStamp": 1673338501163, //时间戳
-            "_id": "63bd1ec667bbc82748b53af8" //_id
+            "coachName": "琼·拉姆",
+            "coachId": "63637f57cf86df5a1cd7ec8b",
+            "orderDate": "2022-12-13",
+            "xtype": 0,
+            "totaldividFee": 0
+        },
+        {
+            "coachName": "琼·拉姆",
+            "coachId": "63637f57cf86df5a1cd7ec8b",
+            "orderDate": "2022-12-13",
+            "xtype": 1,
+            "totaldividFee": 0
+        },
+        {
+            "coachName": "亨利克",
+            "coachId": "63637ef4cf86df5a1cd7ec8a",
+            "orderDate": "2022-12-13",
+            "xtype": 0,
+            "totaldividFee": 100
+        },
+        {
+            "coachName": "亨利克",
+            "coachId": "63637ef4cf86df5a1cd7ec8a",
+            "orderDate": "2022-12-13",
+            "xtype": 1,
+            "totaldividFee": 0
         }
     ]
 }
@@ -3100,6 +3110,55 @@ get   https://yunying.digitgolf.com/w/getClubOrderDetail?clubId=101&orderId=2022
         "TimeStamp": 1670901453100,
         "_id": "6397ef541caee818586982c3"
     }
+}
+或
+{
+	code:1, //失败
+	msg:'fail'
+}
+```
+
+#### 58 58 查询门店教练账单的明细(分页)
+
+get  https://yunying.digitgolf.com/w/getClubCoachBillDetail?orderDate=2022-12-13&clubId=101&pageIndex=1&pageSize=4&xtype=0&coachId=63637ef4cf86df5a1cd7ec8a
+
+```
+{
+	orderDate:2022-12-13,
+	clubId:101,
+	pageIndex:1,
+	pageSize:1,
+	xtype:0,
+	coachId:63637ef4cf86df5a1cd7ec8a
+}
+```
+
+```
+{
+    "code": 0,  //成功
+    "msg": "success",
+    "count": 2, // 要查询日期账单总数量
+    "data": [
+        {
+            "xtype": 0, // 类型, 预约课程0或者视频课程1
+            "clubId": "101", // 门店id
+            "clubName": "北京中通数字高尔夫体验店", //门店名称
+            "coachName": "亨利克", // 教练名
+            "coachId": "63637ef4cf86df5a1cd7ec8a", // 教练id，coach数据库里面的_id
+            "orderId": "202212131119487287772446", //预约订单id
+            "videoCourseId": "", //视频课程订单id
+            "orderDate": "2022-12-13", //要查询的日期,也即是预约订单的日期
+            "orderTime": "2022-12-13 11:19:46", //下预约订单的时间点
+            "startTime": "2022-12-13 18:00",  //订单开始时间
+            "endTime": "2022-12-13 19:00", //订单结束时间
+            "duration": "1", //订单时长
+            "totalFee": 200, //订单总价
+            "dividFee": 50, //分成金额
+            "TimeStamp": 1673338501163, //时间戳
+            "_id": "63bd1ec667bbc82748b53af8" //_id
+        }
+        .......
+    ]
 }
 或
 {
