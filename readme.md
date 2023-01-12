@@ -3169,7 +3169,7 @@ get  https://yunying.digitgolf.com/w/getClubCoachBillDetail?orderDate=2022-12-13
 
 #### 59 获取门店教练最近七天或者本月的账单，以教练为基准分页
 
-get https://yunying.digitgolf.com/w/getClubCoachBillofDay?clubId=101&pageIndex=1&pageSize=2&option=0
+get https://yunying.digitgolf.com/w/getClubCoachBillofSomeDays?clubId=101&pageIndex=1&pageSize=2&option=0
 
 ```
 {
@@ -3223,3 +3223,63 @@ get https://yunying.digitgolf.com/w/getClubCoachBillofDay?clubId=101&pageIndex=1
 }
 ```
 
+#### 60 搜索获取门店教练具体日期范围内的账单，以教练为基准分页
+
+get https://yunying.digitgolf.com/w/searchClubCoachBillofSomeDays?clubId=101&pageIndex=1&pageSize=2&orderDateStart=2022-12-10&orderDateEnd=2022-12-14
+
+````
+{
+	clubId:101，
+	pageIndex:1，
+	pageSize:2,
+	orderDateStart:2022-12-10,
+	orderDateEnd:2022-12-14,
+}
+````
+
+```
+{
+    "code": 0,
+    "msg": "success",
+    "coachCount": 4, //教练总数
+    "data": [
+        {
+            "coachName": "琼·拉姆", // 教练姓名
+            "coachId": "63637f57cf86df5a1cd7ec8b", //教练id
+            "orderDate": "2022-12-13", //查询日期
+            "xtype": 0, //分成类型 预约课程0或者视频课程1
+            "totaldividFee": 0 //总分成金额
+        },
+        {
+            "coachName": "琼·拉姆",
+            "coachId": "63637f57cf86df5a1cd7ec8b",
+            "orderDate": "2022-12-13",
+            "xtype": 1,
+            "totaldividFee": 0
+        },
+        {
+            "coachName": "亨利克",
+            "coachId": "63637ef4cf86df5a1cd7ec8a",
+            "orderDate": "2022-12-13",
+            "xtype": 0,
+            "totaldividFee": 100
+        },
+        {
+            "coachName": "亨利克",
+            "coachId": "63637ef4cf86df5a1cd7ec8a",
+            "orderDate": "2022-12-13",
+            "xtype": 1,
+            "totaldividFee": 0
+        }
+    ]
+}
+或
+{
+	code:1, //失败
+	msg:'fail'
+}
+```
+
+
+
+ 
