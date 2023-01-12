@@ -2788,17 +2788,35 @@ get   https://yunying.digitgolf.com/w/getTodaySaleBill?clubId=101
 			code:0,
 			msg:'success',
 			income:{ // 收入
-				daily: 500, //日常收入
-				store:200, //商城收入
-				restaurant:100 //餐饮收入
+				daily: {
+					total:500, //日常收入
+					orderCount:3 // 订单数
+				}
+				store:{
+					total:200, //商城收入
+					orderCount:3 // 订单数
+				}
+				restaurant:{
+					total:100 //餐饮收入
+					orderCount:3 // 订单数
+				}
 			},
 			out:{ // 支出
-				daily:100, // 日常支出
-				store:120, //商城支出
-				restaurant:20 // 餐饮支出
+				daily:{
+					total:100, // 日常支出
+					orderCount:3 // 订单数
+				}
+				store:{
+					total:120, //商城支出
+					orderCount:3 // 订单数
+				}
+				restaurant:{
+					total:20 // 餐饮支出
+					orderCount:3 // 订单数
+				}
 			}
 }
-
+或
 {			
 			code:1,
 			msg:'fail'
@@ -2820,18 +2838,36 @@ get https://yunying.digitgolf.com/w/getYesterdaySaleBill?clubId=101
 {
 			code:0,
 			msg:'success',
-			income:{  // 收入
-				daily: 500, // 日常收入 
-				store:200, //商城收入
-				restaurant:100 // 餐饮收入
+			income:{ // 收入
+				daily: {
+					total:500, //日常收入
+					orderCount:3 // 订单数
+				},
+				store:{
+					total:200, //商城收入
+					orderCount:3 // 订单数
+				},
+				restaurant:{
+					total:100 //餐饮收入
+					orderCount:3 // 订单数
+				}
 			},
 			out:{ // 支出
-				daily:100, // 日常支出
-				store:120, //商城支出
-				restaurant:20 //餐饮支出
+				daily:{
+					total:100, // 日常支出
+					orderCount:3 // 订单数
+				},
+				store:{
+					total:120, //商城支出
+					orderCount:3 // 订单数
+				},
+				restaurant:{
+					total:20 // 餐饮支出
+					orderCount:3 // 订单数
+				}
 			}
 }
-
+或
 {			
 			code:1,
 			msg:'fail'
@@ -2852,9 +2888,15 @@ get   https://yunying.digitgolf.com/w/getTodaySaleBillDetail?clubId=101
 {
 			code:0,
 			msg:'success',
-			detail:[]
+			detail:{
+				charge_rec:charge_rec,  //充值记录,数组[]
+				golfcard_rec:golfcard_rec, // 购买的卡订单的记录， 微信支付的,数组[]
+				_golfcard_rec:_golfcard_rec, // 卡订单退款记录,数组[]
+				order_rec:order_rec, // 预约记录，微信支付的,数组[]
+				_order_rec:_order_rec //预约退款记录,数组[]
+			}
 }
-
+或
 {			
 			code:1,
 			msg:'fail'
@@ -2877,9 +2919,15 @@ get  https://yunying.digitgolf.com/w/getYesterdaySaleBillDetail?clubId=101
 {
 			code:0,
 			msg:'success',
-			detail:[]
+			detail:{
+				charge_rec:charge_rec,  //充值记录,数组[]
+				golfcard_rec:golfcard_rec, // 购买的卡订单的记录， 微信支付的,数组[]
+				_golfcard_rec:_golfcard_rec, // 卡订单退款记录,数组[]
+				order_rec:order_rec, // 预约记录，微信支付的,数组[]
+				_order_rec:_order_rec //预约退款记录,数组[]
+			}
 }
-
+或
 {			
 			code:1,
 			msg:'fail'
@@ -2905,6 +2953,7 @@ get   https://yunying.digitgolf.com/w/getUserList?clubId=101&pageIndex=1&pageSiz
   count:'10',
   data:[]
 }
+或
 {
 	code:1,
 	msg:'fail'
@@ -2926,6 +2975,7 @@ get  https://yunying.digitgolf.com/order/editOrder?_id=6361e59470c86c2f3a5b596c
   code：0,
   msg:'success',
 }
+或
 {
 	code:1,
 	msg:'fail'
@@ -2950,6 +3000,7 @@ get  https://yunying.digitgolf.com/order/editOrderTime?_id=6361e59470c86c2f3a5b5
   code：0,
   msg:'success',
 }
+或
 {
 	code:1,
 	msg:'fail'
@@ -2972,6 +3023,7 @@ get https://yunying.digitgolf.com/order/editOrderTotalFee?_id=6361e59470c86c2f3a
   code：0,
   msg:'success',
 }
+或
 {
 	code:1,
 	msg:'fail'
@@ -3001,7 +3053,7 @@ get  https://yunying.digitgolf.com/users/getOrderRefundInfo?clubId=101&openid=o9
           },
           msg:'success'
 }
-
+或
 {
         code: 1,
         msg:'fail'
