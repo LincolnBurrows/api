@@ -76,7 +76,7 @@
     "_id" : ObjectId("63a4398899b74b61b7ede330"),
     "xtype" : 2, // 类型
     "golfcardOrderId" : "202212221903360883978641", //高尔夫卡订单id
-    "transaction_id" : "", // //微信支付订单号, 用于申请退款
+    "transaction_id" : "", // 微信支付订单号, 用于申请退款
     "openid" : "o99bm4pV0ulp90gYa9z71799bZOk", //用户openid
     "nickName" : "微信用户", //用户昵称
     "phone" : "",  //手机号
@@ -120,34 +120,34 @@
 5 高尔夫卡模型 
 {
     "_id" : ObjectId("62d1168b6f88ec3ad8c55f9c"),
-    "cardId" : "1001",
-    "cardGrant" : 0,
-    "cardKind" : "1",
-    "cardName" : "每月场地联系卡23次",
-    "golfClub" : "PGA中通数字学院",
-    "clubId" : "100",
-    "coachLevel" : "",
-    "timeValid" : "365",
-    "cardStart" : "",
-    "cardEnd" : "",
-    "cardStatus" : "1",
-    "cardPrice" : "0.01",
-    "cardType" : "场地畅打卡",
-    "cardTimes" : "23",
-    "giveTimes" : "5",
-    "discountMoney" : 0,
-    "discountPercent" : "0",
-    "useRule" : "1天10次4小时",
-    "dayLimit" : 1,
-    "timesLimit" : 10,
-    "hoursLimit" : 4,
-    "remarks" : "2",
-    "cardIntro" : "非常好的练习卡",
-    "cardimg" : "https://yunying.digitgolf.com/images/llwzka5djt.jpg",
-    "coachlogo" : "https://wxmini-digitgolf-yunying.oss-cn-beijing.aliyuncs.com/%E5%8C%97%E4%BA%ACcity%E9%AB%98%E5%B0%94%E5%A4%AB%E5%BA%97/coachlogo.jpg",
-    "isRecommend" : "1",
-    "TimeStamp" : NumberLong(1666853325568),
-    "saleCount" : 0
+    "cardId" : "1001", // 卡id
+    "cardGrant" : 0,  // 0 普通卡 1 特惠卡
+    "cardKind" : "1", //卡的种类：0：课程卡，1：E卡
+    "cardName" : "每月场地联系卡23次", //卡名称
+    "golfClub" : "PGA中通数字学院",  //高尔夫门店名称
+    "clubId" : "100", //高尔夫门店id
+    "coachLevel" : "",  //教练等级 LV0:初级教练  LV1:中级教练 LV2:高级教练 LV3:国家级教练  LV4:国际级教练
+    "timeValid" : "365", //有效期天数
+    "cardStart" : "", //卡上架时间
+    "cardEnd" : "", //卡下架时间
+    "cardStatus" : "1", //状态：比如未上架('0')、上架中('1')、已下架('2')
+    "cardPrice" : "0.01", //价格
+    "cardType" : "场地畅打卡", //类型， 比如成人私教课、青少年私教课
+    "cardTimes" : "23",  //次数  若为 9999表示无限畅达卡
+    "giveTimes" : "5", //新用户购买赠送次数
+    "discountMoney" : 0, //按金额优惠
+    "discountPercent" : "0",  //按百分比优惠
+    "useRule" : "1天10次4小时", // 使用规则描述
+    "dayLimit" : 1, // 天数限制
+    "timesLimit" : 10, // 次数限制
+    "hoursLimit" : 4, // 每次的小时限制
+    "remarks" : "2",  //购买限制备注：0：无限制，1：限首次购卡用户，N:限购N次
+    "cardIntro" : "非常好的练习卡", //卡介绍
+    "cardimg" : "https://yunying.digitgolf.com/images/llwzka5djt.jpg",  //封面图
+    "coachlogo" : "https://wxmini-digitgolf-yunying.oss-cn-beijing.aliyuncs.com/%E5%8C%97%E4%BA%ACcity%E9%AB%98%E5%B0%94%E5%A4%AB%E5%BA%97/coachlogo.jpg", //教练logo
+    "isRecommend" : "1", //是否设置为推荐课程卡 0 不设置  1设置
+    "TimeStamp" : 1666853325568.0,  //时间戳	
+    "saleCount" : 0 // 销量
 }
 ```
 
