@@ -1,3 +1,158 @@
+#### 0 文档模型参数说明
+
+```
+1 教练模型
+{
+    "_id" : ObjectId("630f0e5e0c9ac64f1f602b52"), // 教练id，有地方也有于coachId
+    "clubId" : "100", // 教练所属门店id
+    "coachName" : "小王", // 教练姓名
+    "gender" : "男", // 教练性别
+    "phone" : "15111111111", //教练手机号
+    "isInner" : true, // 是否为内部教练员工
+    "expense" : 200, // 每节费用
+    "expensePercent" : "10%", // 每节费用分成 百分比
+    "avatarUrl" :    "https://thirdwx.qlogo.cn/mmopen/vi_32/fndXt7CVrdEll4znPM5MAD0nfJCDuqCYS1xvkmqArmj9rEym8Za7aofBrjndvLNIIkPcphibfeaZibhPIfdMGGTA/132",     // 教练头像
+    "level" : "4", // 教练等级 0:初级教练  1:中级教练 2:高级教练 3:国家级教练  4:国际级教练
+    "timesLimit" : 99, // 每天可预约的次数
+    "timesUsed" : 0, //每天已经预约的次数
+    "hoursLimit" : 4, // 每次预约的最大时长
+    "isOrderable" : true, // 是否可预约
+    "orderBeginTime" : "00:00:00", // 可预约的开始时间
+    "orderEndTime" : "24:00:00", // 可预约的结束时间
+    "alreadOrderDuration" : [  已经预约的时间段
+        {
+            "orderId" : "202211301416097871127481", // 预约订单id
+            "orderDate" : "2022-11-30", //预约日期
+            "startTime" : "2022-11-30 15:20:00", // 预约开始时间
+            "endTime" : "2022-11-30 16:20:00" //预约结束时间
+        }, 
+        {
+            "orderId" : "202212011355218213664879",
+            "orderDate" : "2022-12-01",
+            "startTime" : "2022-12-01 19:20",
+            "endTime" : "2022-12-01 20:20"
+        }
+    ],
+    "introduction" : "好教练" // 教练介绍
+}
+
+2 教练账单模型
+{
+    "_id" : ObjectId("63bd1e8b67bbc82748b53af7"),
+    "xtype" : 0, // 类型, 预约课程0或者视频课程1
+    "clubId" : "101", // 门店id
+    "clubName" : "北京中通数字高尔夫体验店", // 门店名
+    "coachName" : "亨利克", // 教练名
+    "coachId" : "63637ef4cf86df5a1cd7ec8a", // 教练id
+    "orderId" : "202212131119487287772446", // 预约订单id
+    "videoCourseId" : "", // 视频课程订单id
+    "orderDate" : "2022-12-13", // 预约订单日期
+    "orderTime" : "2022-12-13 11:19:46", // 下预约订单的时间点
+    "startTime" : "2022-12-13 18:00", //订单开始时间
+    "endTime" : "2022-12-13 19:00", //订单结束时间
+    "duration" : "1", //订单时长
+    "totalFee" : 200, //订单总价
+    "dividFee" : 50, //分成金额
+    "TimeStamp" : 1670901586000.0 // 时间戳
+}
+
+3 微信支付充值记录模型
+{
+    "_id" : ObjectId("6307128684be080d25b801e4"),
+    "xtype" : 0, // 类型
+    "chargeOrderId" : "202208251411187251107400", //充值订单号
+    "transaction_id" : "4200001557202208256712028400", //微信支付订单号, 用于申请退款 
+    "clubId" : "100", // 门店id
+    "openid" : "o99bm4gcIfeTgVjaWspYoPJv9XHI", // 用户openid
+    "totalFee" : 0.1, // 充值总价
+    "status" : 1,  //订单状态  1：充值成功 status=5是已退款
+    "orderDate" : "2022-08-25", //充值日期
+    "orderTime" : "2022-08-25 14:11:18", //充值具体时间
+    "TimeStamp" : 1661393028201.0 // 时间戳
+}
+
+4 高尔夫卡订单记录模型
+{
+    "_id" : ObjectId("63a4398899b74b61b7ede330"),
+    "xtype" : 2, // 类型
+    "golfcardOrderId" : "202212221903360883978641", //高尔夫卡订单id
+    "transaction_id" : "", // //微信支付订单号, 用于申请退款
+    "openid" : "o99bm4pV0ulp90gYa9z71799bZOk", //用户openid
+    "nickName" : "微信用户", //用户昵称
+    "phone" : "",  //手机号
+    "cardId" : "vyfcotxy9d8", //高尔夫卡id
+    "cardGrant" : 1,    // 0:普通购买的卡, 1:特惠卡
+    "cardKind" : "0",  //卡的种类: 0:课程卡(约教练), 1:E卡(约场地)
+    "cardName" : "成人私教卡现场1V1教学23节课",   //卡名称
+    "golfClub" : "北京中通数字高尔夫体验店",  //高尔夫门店名称
+    "clubId" : "101",  //高尔夫门店id
+    "coachLevel" : "初级教练",   //教练等级
+    "timeValid" : "111",   //有效期天数
+    "expireTime" : "",  //过期时间
+    "isExpire" : false,  //是否过使用期限
+    "cardPrice" : 4000,   //价格
+    "cardType" : "成人私教课",  //类型， 比如成人私教课、青少年私教课
+    "cardTimes" : 23, //次数
+    "giveTimes" : 3,  //新用户购买赠送次数
+    "_cardTimes" : 23,  // 用于备份卡原有次数
+    "_giveTimes" : 3,   // 用于备份卡原有次数
+    "useRule" : "10次4分钟", // 使用规则描述
+    "dayLimit" : 1, // 天数限制
+    "timesLimit" : 1, // 次数限制
+    "hoursLimit" : 2, // 每次的小时限制
+    "dayUsed" : 0, //已使用的
+    "timesUsed" : 0, //已使用次数
+    "remarks" : "0", // 购买限制备注：0：无限制，1：限首次购卡用户，N:限购N次
+    "cardIntro" : "非常好的课程卡", // 卡介绍
+    "cardimg" : "https://yunying.digitgolf.com/images/dqny3b9x9b.jpg", //封面图
+    "coachlogo" : "https://wxmini-digitgolf-yunying.oss-cn-beijing.aliyuncs.com/%E5%8C%97%E4%BA%ACcity%E9%AB%98%E5%B0%94%E5%A4%AB%E5%BA%97/coachlogo.jpg",   //教练logo
+    "totalfee" : 4000, //订单总价
+    "discount" : 0,  //优惠金额
+    "orderDate" : "2022-12-22",  //下单日期  "orderDate":"2022-08-19",
+    "orderTime" : "2022-12-22 19:03:36",  //下单时间
+    "payTime" : "", //支付时间
+    "dealTime" : "", //成交时间
+    "payManner" : 2, //支付方式 0 微信支付 1 余额支付 2 还没有支付 3 后台支付
+    "status" : 2, //订单状态 0：待付款 1：待使用 2：已取消 3：订单已过期 注：过期未使用也算已使用 5：已退款 6:退款中（已使用次数的卡需后台审批）7:售后退款已删除 8 审批失败
+    "TimeStamp" : 1671103729103.0 //时间戳
+}
+
+5 高尔夫卡模型 
+{
+    "_id" : ObjectId("62d1168b6f88ec3ad8c55f9c"),
+    "cardId" : "1001",
+    "cardGrant" : 0,
+    "cardKind" : "1",
+    "cardName" : "每月场地联系卡23次",
+    "golfClub" : "PGA中通数字学院",
+    "clubId" : "100",
+    "coachLevel" : "",
+    "timeValid" : "365",
+    "cardStart" : "",
+    "cardEnd" : "",
+    "cardStatus" : "1",
+    "cardPrice" : "0.01",
+    "cardType" : "场地畅打卡",
+    "cardTimes" : "23",
+    "giveTimes" : "5",
+    "discountMoney" : 0,
+    "discountPercent" : "0",
+    "useRule" : "1天10次4小时",
+    "dayLimit" : 1,
+    "timesLimit" : 10,
+    "hoursLimit" : 4,
+    "remarks" : "2",
+    "cardIntro" : "非常好的练习卡",
+    "cardimg" : "https://yunying.digitgolf.com/images/llwzka5djt.jpg",
+    "coachlogo" : "https://wxmini-digitgolf-yunying.oss-cn-beijing.aliyuncs.com/%E5%8C%97%E4%BA%ACcity%E9%AB%98%E5%B0%94%E5%A4%AB%E5%BA%97/coachlogo.jpg",
+    "isRecommend" : "1",
+    "TimeStamp" : NumberLong(1666853325568),
+    "saleCount" : 0
+}
+```
+
+
+
 #### 1 添加教练信息
 
 post  https://yunying.digitgolf.com/coach/add    
