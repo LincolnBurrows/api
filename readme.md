@@ -254,7 +254,7 @@
 
 			} */
 		] 
-	}
+}
 
 7 钱包moeny模型
 {
@@ -292,7 +292,7 @@
 		storeGoodCount:{type:Number, default:0}, // 购买商城物件数量
 		storeRefundTimes:{type:Number, default:0}, // 商城退款次数
 		totalOrderCount:{type:Number, default:0} // 订单总数
-	}
+}
 	
 8 预约订单模型
 {
@@ -324,7 +324,7 @@
         ing:{type:Number,default:0}, // 待使用的订单是否为进行中 默认0 不是进行中，1是进行中，后台查询进行中预约订单时回更新
         remarks: {type:String, default:"打球"}, //订单备注信息
         TimeStamp:{type:Number, default: moment().valueOf()}  //时间戳
-    }
+}
  
  9 退款次数记录模型
  {
@@ -333,9 +333,45 @@
 		wxrefundTimes:{type:Number, default:0}, // 微信支付取消预约次数
         moneyrefundTimes:{type:Number, default:0}, // 余额支付取消预约次数
         cardrefundTimes:{type:Number, default:0}, // 卡支付取消预约次数
-	}
+}
 
-10 
+10 用户模型
+{
+		nickName: {type: String, default: ''}, // 昵称
+		phone: {type: String, default: ''}, //手机号
+		openid: {type: String, default: ''}, //用户openid
+		gender: {type: Number, default: 0}, // 0 男； 1 女
+		avatarUrl: {type: String, default: ''}, //头像
+		language: {type: String, default: ''}, //语言
+		province: {type: String, default: ''}, //省份
+		city: {type: String, default: ''}, //城市
+		country: {type: String ,default: ''}, //国家
+		grant: {type: Number, default:0}, //权限，默认0 普通用户， 1表示管理员， 2表示超级用户
+		date: {type: String, default: moment().format("YYYY-MM-DD")},//注册日期
+		dateTime:{type: String, default: moment().format("YYYY-MM-DD HH:mm:ss")}, //注册具体时间
+		myaddr:{type:Array, default:[]}, //我的地址
+		mycoursecard:{type:Array, default:[]}, //我的课程卡
+		myecard:{type:Array,default:[]}, //我的e卡
+		mytehcard:{type:Array, default:[]}, //我的特惠卡
+		mycoupon: {type: Array, default: []}, //我的优惠券
+		money: {type: Number, default: 0}, //钱包， 余额，单位:元
+		consumeHistory: {type: Array, default: []}, //消费记录
+		chargeHistory: {type: Array, default: []}, //充值记录
+		remarks:{type: String, default:''},  //备注信息
+		status:{type:Number, default:0},  //用户状态 0:正常 1:封停
+		lastOrderTime:{type: String, default:''} // 最后预约时间，订单开始时间
+}
+
+11 后台管理员账号模型
+{
+		userName: {type: String, default: 'admin'}, //账号
+		passWord: {type: String, default: 'admin'}, // 密码
+		clubId: {type: String, default: ''}, // 门店id
+		club_id: {type: String, default: ''}, // 门店数据库的_id
+		clubName:{type: String, default: ''}, // 门店名称
+		name:{type: String, default: ''}, //姓名
+		avatar:{type: String, default: ''} //头像
+}
 ```
 
 
