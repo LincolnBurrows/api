@@ -3423,6 +3423,93 @@ get https://yunying.digitgolf.com/w/getClubBillSomeDaysOfDetail?clubId=101&optio
 }
 ```
 
+#### 67 按日期搜索门店具体时间范围的账单
+
+get https://yunying.digitgolf.com/w/seachClubBillSomeDays?clubId=101&orderDateStart=2023-01-01&orderDateEnd=2023-01-03
+
+````
+{
+	clubId:101, // 门店id
+	orderDateStart:2023-01-01, // 查询开始时间
+	orderDateEnd:2023-01-03 // 查询结束时间
+}
+````
+
+```
+{
+			code:0,
+			msg:'success',
+			queryDate:'2023-01-06 ~ 2023-01-13', // 日期
+			income:{
+				sum: 300 // 总收入
+				daily:{
+					total:100, // 日常收入
+					orderCount:3 // 订单数
+				} ,
+				store:{
+					total:100, // 商城收入
+					orderCount:3 // 订单数
+				},
+				restaurant:{
+					total:100, // 餐饮收入
+					orderCount:3 // 订单数
+				}
+			},
+			out:{
+				sum: 100, // 总支出
+				daily:{
+					total:30, //日常支出
+					orderCount:3 //订单数
+				},
+				store:{
+				  total:30, // 商城支出
+				  orderCount:3	//订单数	
+				},
+				restaurant:{
+					total:40, //餐饮支出
+					orderCount:3 //订单数
+				}
+			},
+			net_income: 200//净收入
+}
+或
+{
+	code:1,
+	msg:'fail'
+}
+```
+
+#### 68 按日期搜索门店具体时间范围的账单明细
+
+get https://yunying.digitgolf.com/w/searchClubBillSomeDaysOfDetail?clubId=101&orderDateStart=2023-01-01&orderDateEnd=2023-01-03
+
+```
+{
+	clubId:101, // 门店id
+	orderDateStart:2023-01-01, // 查询开始时间
+	orderDateEnd:2023-01-03 // 查询结束时间
+}
+```
+
+```
+{
+			code:0,
+			msg:'success',
+			detail:{
+				charge_rec:charge_rec,  //充值记录,数组[]
+				golfcard_rec:golfcard_rec, // 购买的卡订单的记录， 微信支付的,数组[]
+				_golfcard_rec:_golfcard_rec, // 卡订单退款记录,数组[]
+				order_rec:order_rec, // 预约记录，微信支付的,数组[]
+				_order_rec:_order_rec //预约退款记录,数组[]
+			}
+}
+或
+{			
+			code:1,
+			msg:'fail'
+}
+```
+
 
 
  
