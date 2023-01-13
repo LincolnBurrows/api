@@ -2911,8 +2911,6 @@ get   https://yunying.digitgolf.com/w/getTodaySaleBillDetail?clubId=101
 }
 ```
 
-
-
 #### 49 门店昨日账单明细
 
 get  https://yunying.digitgolf.com/w/getYesterdaySaleBillDetail?clubId=101
@@ -3337,6 +3335,91 @@ get https://yunying.digitgolf.com/w/searchClubCoachBillofSomeDays?clubId=101&pag
 {
 	code:1, //失败
 	msg:'fail'
+}
+```
+
+#### 61 获取门店最近7日或本月的账单
+
+get https://yunying.digitgolf.com/w/getClubBillSomeDays?clubId=101&option=0
+
+```
+{
+	clubId:101, // 门店id
+	option:0 //0 最近7天, 1 本月
+}
+```
+
+```
+{
+			code:0,
+			msg:'success',
+			queryDate:'2023-01-06 ~ 2023-01-13', // 日期
+			income:{
+				sum: 300 // 总收入
+				daily:{
+					total:100, // 日常收入
+					orderCount:3 // 订单数
+				} ,
+				store:{
+					total:100, // 商城收入
+					orderCount:3 // 订单数
+				},
+				restaurant:{
+					total:100, // 餐饮收入
+					orderCount:3 // 订单数
+				}
+			},
+			out:{
+				sum: 100, // 总支出
+				daily:{
+					total:30, //日常支出
+					orderCount:3 //订单数
+				},
+				store:{
+				  total:30, // 商城支出
+				  orderCount:3	//订单数	
+				},
+				restaurant:{
+					total:40, //餐饮支出
+					orderCount:3 //订单数
+				}
+			},
+			net_income: 200//净收入
+}
+或
+{
+	code:1,
+	msg:'fail'
+}
+```
+
+#### 62 获取门店最近7日或本月的账单明细
+
+get https://yunying.digitgolf.com/w/getClubBillSomeDaysOfDetail?clubId=101&option=0
+
+```
+{
+    clubId:101, // 门店id
+	option:0 // 0 最近7天, 1 本月
+}
+```
+
+```
+{
+			code:0,
+			msg:'success',
+			detail:{
+				charge_rec:charge_rec,  //充值记录,数组[]
+				golfcard_rec:golfcard_rec, // 购买的卡订单的记录， 微信支付的,数组[]
+				_golfcard_rec:_golfcard_rec, // 卡订单退款记录,数组[]
+				order_rec:order_rec, // 预约记录，微信支付的,数组[]
+				_order_rec:_order_rec //预约退款记录,数组[]
+			}
+}
+或
+{			
+			code:1,
+			msg:'fail'
 }
 ```
 
