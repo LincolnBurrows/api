@@ -2787,34 +2787,38 @@ get   https://yunying.digitgolf.com/w/getTodaySaleBill?clubId=101
 {
 			code:0,
 			msg:'success',
-			income:{ // 收入
-				daily: {
-					total:500, //日常收入
+			queryDate:'2022-01-10', // 日期
+			income:{
+				sum: 300 // 总收入
+				daily:{
+					total:100, // 日常收入
 					orderCount:3 // 订单数
-				}
+				} ,
 				store:{
-					total:200, //商城收入
+					total:100, // 商城收入
 					orderCount:3 // 订单数
-				}
+				},
 				restaurant:{
-					total:100 //餐饮收入
+					total:100, // 餐饮收入
 					orderCount:3 // 订单数
 				}
 			},
-			out:{ // 支出
+			out:{
+				sum: 100, // 总支出
 				daily:{
-					total:100, // 日常支出
-					orderCount:3 // 订单数
-				}
+					total:30, //日常支出
+					orderCount:3 //订单数
+				},
 				store:{
-					total:120, //商城支出
-					orderCount:3 // 订单数
-				}
+				  total:30, // 商城支出
+				  orderCount:3	//订单数	
+				},
 				restaurant:{
-					total:20 // 餐饮支出
-					orderCount:3 // 订单数
+					total:40, //餐饮支出
+					orderCount:3 //订单数
 				}
-			}
+			},
+			net_income: 200//净收入
 }
 或
 {			
@@ -2838,34 +2842,38 @@ get https://yunying.digitgolf.com/w/getYesterdaySaleBill?clubId=101
 {
 			code:0,
 			msg:'success',
-			income:{ // 收入
-				daily: {
-					total:500, //日常收入
+			queryDate:'2022-01-09', // 日期
+			income:{
+				sum: 300 // 总收入
+				daily:{
+					total:100, // 日常收入
 					orderCount:3 // 订单数
-				},
+				} ,
 				store:{
-					total:200, //商城收入
+					total:100, // 商城收入
 					orderCount:3 // 订单数
 				},
 				restaurant:{
-					total:100 //餐饮收入
+					total:100, // 餐饮收入
 					orderCount:3 // 订单数
 				}
 			},
-			out:{ // 支出
+			out:{
+				sum: 100, // 总支出
 				daily:{
-					total:100, // 日常支出
-					orderCount:3 // 订单数
+					total:30, //日常支出
+					orderCount:3 //订单数
 				},
 				store:{
-					total:120, //商城支出
-					orderCount:3 // 订单数
+				  total:30, // 商城支出
+				  orderCount:3	//订单数	
 				},
 				restaurant:{
-					total:20 // 餐饮支出
-					orderCount:3 // 订单数
+					total:40, //餐饮支出
+					orderCount:3 //订单数
 				}
-			}
+			},
+			net_income: 200//净收入
 }
 或
 {			
@@ -3170,7 +3178,7 @@ get   https://yunying.digitgolf.com/w/getClubOrderDetail?clubId=101&orderId=2022
 }
 ```
 
-#### 58 58 查询门店教练账单的明细(分页)
+#### 58 查询门店教练账单的明细(分页)
 
 get  https://yunying.digitgolf.com/w/getClubCoachBillDetail?orderDate=2022-12-13&clubId=101&pageIndex=1&pageSize=4&xtype=0&coachId=63637ef4cf86df5a1cd7ec8a
 
