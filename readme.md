@@ -149,6 +149,193 @@
     "TimeStamp" : 1666853325568.0,  //时间戳	
     "saleCount" : 0 // 销量
 }
+
+6 门店模型
+{
+	    clubId: {type: String, default: ""},  // 门店id
+		clubType: {type: Number, default: 0},  //0：非无人值守  1：无人值守
+		clubName: {type: String, default: ''}, //店名
+		address: {type: String, default: ''},//地址
+
+		// 菜单栏开启或关闭， 默认开启为1
+		menu_coursecard:{type: String, default: '1'}, //课程卡
+		menu_ecard:{type: String, default: '1'}, //E卡
+		menu_tehui:{type: String, default: '1'}, //限时特惠
+		menu_store:{type: String, default: '1'}, //商城
+		menu_restaurant:{type: String, default: '1'}, //点餐
+		menu_onlineTeaching:{type: String, default: '1'}, //线上授课
+		menu_videoCourse:{type: String, default: '1'},// 线上课程
+
+		orderPos:{type: String, default: '1'}, //约场地
+		orderCoach:{type: String, default: '1'}, //约教练
+		unattended:{type: String, default: '1'}, //无人值守
+
+		//赛事
+		event:{type: String, default: '1'},
+
+		//我的
+		myCollection:{type: String, default: '1'}, //我的收藏
+		myVideo:{type: String, default: '1'}, //我的视频
+		myRecord:{type: String, default: '1'}, //我的记录
+		myData:{type: String, default: '1'},  //我的数据
+		myRank:{type: String, default: '1'},  //我的排名
+
+      	latitude: {type: Number, default: 0}, //纬度
+      	longitude: {type: Number,default: 0}, //经度
+		imglogo: {type:String, default:'https://wxmini-digitgolf-yunying.oss-cn-beijing.aliyuncs.com/golfclubdefault/golfclublogo.jpg'}, //门店logo， 订单logo
+      	imgbanner: {type: Array, default: []}, //图片介绍,头部轮播
+		imgadstyle: {type:String, default:"4"}, // 广告图显示样式 '1', '2', '3', '4' 
+		imgad: {type: Array, default: []},  // 图片，广告位
+	    intro: {type:String, default:""},//门店介绍
+		hotline: {type:String, default:""}, //客服热线
+		payType:{type:String, default:'0'}, //支付类型 0不支持线上支付  1 支持线上支付
+		openTime:{type:String, default:"00:00:00"}, //营业开门时间
+		closeTime:{type:String, default:"24:00:00"}, //营业关门时间
+		cancelLimitHour:{type:Number, default:2}, //默认2小时 提前几个小时取消预约不扣费，限制小时之内取消卡支付的扣除次数，微信和余额支付的扣除金额的百分比
+		cancelPercent:{type:Number, default:0}, //取消扣除费用的百分比， 传小数， 比如0.1
+		displayCoach:[{}], // 展示的教练
+		displayGolfcardstyle:{type:String, default:"1"}, //高尔夫卡显示样式 '1'竖放  '2'横放
+		displayGolfcard:[{}], // 展示的高尔夫卡
+		hitposition: [{}],  //打位信息
+		// 修改日期
+		updateAt:{type:String, default: moment().format("YYYY-MM-DD HH:mm:ss")},
+		/* 
+		{
+			posid:'1',
+			posname: '打位1',
+			price: 100
+		}
+		 */
+		template:[
+			/* {
+				_template_id:'',
+				_clubName:'',
+				// 第一部分
+				_imgbanner:[],
+
+				// 第二部分 菜单栏开启或关闭， 默认开启为1
+				_menu_coursecard:'1',
+				_menu_ecard:'1',
+				_menu_tehui:'1',
+				_menu_store:'1',
+				_menu_restaurant:'1',
+				_menu_onlineTeaching:'1',
+				_menu_videoCourse:'1',
+
+				// 第三部分 
+				_imgad:[],
+
+				// 第四部分
+				_displayCoach:[], 
+
+				// 第五部分
+				_hotline:'',
+				_address:'',
+
+				// 第六部分
+				_displayGolfcard:[]
+				// 预约
+				_orderPos:'1', //约场地
+				_orderCoach:'1', //约教练
+				_unattended:'1', //无人值守
+
+				// 赛事
+				_event:'1',
+
+				// 我的
+				_myCollection:'1', //我的收藏
+				_myVideo:'1', //我的视频
+				_myRecord:'1', //我的记录
+				_myData:'1',  //我的数据
+				_myRank:'1',  //我的排名
+
+				// 更新时间
+				_updateAt: '2022-10-26 12:00:00'
+
+			} */
+		] 
+	}
+
+7 钱包moeny模型
+{
+		clubId: {type: String, default: ""}, // 高尔夫门店id
+        golfClub: {type:String, default:""}, //高尔夫门店名称
+        openid: {type:String, default:''}, //用户openid
+		nickName: {type: String, default: ''}, // 昵称
+		phone: {type: String, default: ''}, //手机号
+		gender: {type: Number, default: 0}, // 0 男； 1 女
+		avatarUrl: {type: String, default: ''}, //头像
+		language: {type: String, default: ''}, // 语言
+		province: {type: String, default: ''}, //省份
+		city: {type: String, default: ''}, // 城市
+		country: {type: String ,default: ''}, // 国家
+		date: {type: String, default: moment().format("YYYY-MM-DD")},//注册日期
+		dateTime:{type: String, default: moment().format("YYYY-MM-DD HH:mm:ss")}, //注册具体时间
+        money: {type:Number, default:1000}, //余额金额 (本金)
+		gift:{type:Number, default:0} , // 余额赠额
+		grant: {type: Number, default:0}, //权限，默认0 普通用户， 1表示管理员， 2表示超级用户
+		remarks:{type: String, default:''},  //备注信息
+		status:{type:Number, default:0},  //用户状态 0:正常 1:封停
+		mycoursecard:{type:Array, default:[]}, //我的课程卡
+		myecard:{type:Array,default:[]}, //我的e卡
+		mytehcard:{type:Array, default:[]}, //我的特惠卡
+		mycoupon: {type: Array, default: []}, //我的优惠券
+		consumeHistory: {type: Array, default: []}, //消费记录
+		chargeHistory: {type: Array, default: []}, //充值记录
+		totalConsume:{type:Number, default:0}, // 总消费金额
+		totalRefund:{type:Number, default:0}, // 总退款金额
+		lastConsumeTime:{type:String, default:''}, // 最后消费时间
+		lastRefundTime:{type:String, default:''}, // 最后退款时间
+		lastOrderTime:{type: String, default:''}, // 最后预约时间,订单开始时间
+		refundTimes:{type:Number, default:0}, // 退款次数
+		storeOrderCount:{type:Number, default:0}, // 商城订单数
+		storeGoodCount:{type:Number, default:0}, // 购买商城物件数量
+		storeRefundTimes:{type:Number, default:0}, // 商城退款次数
+		totalOrderCount:{type:Number, default:0} // 订单总数
+	}
+	
+8 预约订单模型
+{
+        xtype:{type:Number, default:1}, //record类型
+        orderId: {type:String, default:""}, //预约订单id
+        transaction_id:{type:String, default:''}, //微信支付订单号, 用于申请退款
+        openid: {type:String, default:""}, //用户的openid
+        nickName: {type:String, default:""}, //用户昵称
+        phone:{type:String, default:''}, //用户手机号
+        clubId: {type: String, default:""}, //门店id
+        clubName: {type: String, default:""}, //店名
+        payType: {type:String, default:"0"}, //门店支付类型 0不支持线上支付  1 支持线上支付
+        coachId:{type:String, default:''}, //教练id
+        coachName:{type:String, default:""}, //教练姓名
+        coachLevel:{type:String, default:""}, //教练等级
+        coachGender:{type:String, default:""},//教练性别
+        serviceType:{type:String, default:'打球'}, //服务类型， 打球， 其他
+        posid:{type:String, default:''}, //打位id
+        hitposition: {type: String, default:""},    //打位名称  1号打位
+        totalFee: {type: Number, default: 0},//总价
+        orderDate:{type: String, default:""}, //要预约日期
+        orderTime:{type: String, default:""}, //下预约订单的时间点
+        startTime: {type:String, default:""}, //订单开始时间
+        endTime: {type: String, default:""}, //订单结束时间
+        duration:{type:String, default:""}, //订单时长
+        payManner:{type:Number, default:2}, //支付方式 0 微信支付 1 余额支付 2 还没有支付 3 后台支付 4 卡支付
+        golfcardOrderId:{type:String, default:''}, // 如果是卡支付,则设置卡的golfcardOrderId
+        status: {type: Number, default: 0},  //预约订单状态 0：待付款 1：待使用 2：已取消 3：已使用 4：进行中 注：过期未使用也算已使用 status=5是已退款
+        ing:{type:Number,default:0}, // 待使用的订单是否为进行中 默认0 不是进行中，1是进行中，后台查询进行中预约订单时回更新
+        remarks: {type:String, default:"打球"}, //订单备注信息
+        TimeStamp:{type:Number, default: moment().valueOf()}  //时间戳
+    }
+ 
+ 9 退款次数记录模型
+ {
+		clubId: {type: String, default: ""}, // 门店ID
+		openid: {type: String, default: ''}, // 用户
+		wxrefundTimes:{type:Number, default:0}, // 微信支付取消预约次数
+        moneyrefundTimes:{type:Number, default:0}, // 余额支付取消预约次数
+        cardrefundTimes:{type:Number, default:0}, // 卡支付取消预约次数
+	}
+
+10 
 ```
 
 
