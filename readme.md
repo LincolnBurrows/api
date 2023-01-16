@@ -3942,6 +3942,28 @@ get https://yunying.digitgolf.com/w/searchClubBillSomeDaysOfDetail?clubId=101&or
 }
 ```
 
+#### 69 用户高尔夫卡订单的使用记录（分页）
 
+ get https://yunying.digitgolf.com/w/searchClubBillSomeDaysOfDetail?clubId=101&openid=o99bm4gcIfeTgVjaWspYoPJv9XHI&golfcardOrderId=202212131619278564724775&pageIndex=1&pageSize=1
 
- 
+```
+{
+	clubId:101,  // 门店id
+	openid:o99bm4gcIfeTgVjaWspYoPJv9XHI,  // 用户openid
+	golfcardOrderId:202212131619278564724775,  // 高尔夫卡订单id
+	pageIndex:1,  // 页码
+	pageSize:1  // 每页显示数量
+}
+```
+
+```
+{
+	
+}
+或者
+{			
+	code:1,
+	msg:'fail'
+}
+```
+
