@@ -3554,18 +3554,18 @@ get   https://yunying.digitgolf.com/w/getClubOrderDetail?clubId=101&orderId=2022
 }
 ```
 
-#### 58 查询门店教练账单的明细(分页)
+#### 58 查询门店教练账单的明细(分页)，具体某一天，比如今天或者昨天
 
 get  https://yunying.digitgolf.com/w/getClubCoachBillDetail?orderDate=2022-12-13&clubId=101&pageIndex=1&pageSize=4&xtype=0&coachId=63637ef4cf86df5a1cd7ec8a
 
 ```
 {
-	orderDate:2022-12-13,
-	clubId:101,
-	pageIndex:1,
-	pageSize:1,
-	xtype:0,
-	coachId:63637ef4cf86df5a1cd7ec8a
+	orderDate:2022-12-13, //查询日期
+	clubId:101, // 门店id
+	pageIndex:1, // 页码
+	pageSize:1, // 每页显示数量
+	xtype:0, // 预约课程0或者视频课程1
+	coachId:63637ef4cf86df5a1cd7ec8a // 教练id
 }
 ```
 
@@ -3573,7 +3573,7 @@ get  https://yunying.digitgolf.com/w/getClubCoachBillDetail?orderDate=2022-12-13
 {
     "code": 0,  //成功
     "msg": "success",
-    "count": 2, // 要查询日期账单总数量
+    "count": 2, // 要查询日期账单明细总数量
     "data": [
         {
             "xtype": 0, // 类型, 预约课程0或者视频课程1
@@ -3602,6 +3602,60 @@ get  https://yunying.digitgolf.com/w/getClubCoachBillDetail?orderDate=2022-12-13
 	msg:'fail'
 }
 ```
+
+#### 58.1 查询门店教练范围内的账单明细(分页)，比如最近7天，一个月或者搜索日期范围内的
+
+get  https://yunying.digitgolf.com/w/getClubCoachBillDetail?orderDateStart=2022-12-13&orderDateEnd=2022-12-14&clubId=101&pageIndex=1&pageSize=4&xtype=0&coachId=63637ef4cf86df5a1cd7ec8a
+
+```
+{
+	orderDateStart:2022-12-13,  // 搜索开始日期，格式如2022-12-13
+	orderDateEnd:2022-12-14, // 搜索结束日期， 格式如2022-12-14
+	clubId:101, // 门店id
+	pageIndex:1, // 页码
+	pageSize:4, // 每页显示数量
+	xtype:0, // 预约课程0或者视频课程1
+	coachId:63637ef4cf86df5a1cd7ec8a // 教练id
+}
+```
+
+```
+{
+    "code": 0,  //成功
+    "msg": "success",
+    "count": 2, // 要查询日期范围内的账单明细总数量
+    "data": [
+        {
+            "xtype": 0, // 类型, 预约课程0或者视频课程1
+            "clubId": "101", // 门店id
+            "clubName": "北京中通数字高尔夫体验店", //门店名称
+            "coachName": "亨利克", // 教练名
+            "coachId": "63637ef4cf86df5a1cd7ec8a", // 教练id，coach数据库里面的_id
+            "orderId": "202212131119487287772446", //预约订单id
+            "videoCourseId": "", //视频课程订单id
+            "orderDate": "2022-12-13", //要查询的日期,也即是预约订单的日期
+            "orderTime": "2022-12-13 11:19:46", //下预约订单的时间点
+            "startTime": "2022-12-13 18:00",  //订单开始时间
+            "endTime": "2022-12-13 19:00", //订单结束时间
+            "duration": "1", //订单时长
+            "totalFee": 200, //订单总价
+            "dividFee": 50, //分成金额
+            "TimeStamp": 1673338501163, //时间戳
+            "_id": "63bd1ec667bbc82748b53af8" //_id
+        }
+        .......
+    ]
+}
+或
+{
+	code:1, //失败
+	msg:'fail'
+}
+```
+
+
+
+
 
 #### 59 获取门店教练最近七天或者本月的账单，以教练为基准分页
 
