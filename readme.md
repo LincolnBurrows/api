@@ -3944,7 +3944,7 @@ get https://yunying.digitgolf.com/w/searchClubBillSomeDaysOfDetail?clubId=101&or
 
 #### 69 用户高尔夫卡订单的使用记录（分页）
 
- get https://yunying.digitgolf.com/w/searchClubBillSomeDaysOfDetail?clubId=101&openid=o99bm4gcIfeTgVjaWspYoPJv9XHI&golfcardOrderId=202212131619278564724775&pageIndex=1&pageSize=1
+ get https://yunying.digitgolf.com/w/getUserGolfCardUseRecord?clubId=101&openid=o99bm4gcIfeTgVjaWspYoPJv9XHI&golfcardOrderId=202212131619278564724775&pageIndex=1&pageSize=1
 
 ```
 {
@@ -3958,7 +3958,43 @@ get https://yunying.digitgolf.com/w/searchClubBillSomeDaysOfDetail?clubId=101&or
 
 ```
 {
-	
+    "code": 0,
+    "msg": "success",
+    "count": 1, // 使用记录总数
+    "data": [
+        {  // 以下字段就是预约订单的参数，即用卡来支付预约订单
+            "xtype": 1,
+            "orderId": "202212141112008634187097",
+            "transaction_id": "",
+            "openid": "o99bm4gcIfeTgVjaWspYoPJv9XHI",
+            "nickName": "微信用户",
+            "phone": "13661187935",
+            "clubId": "101",
+            "clubName": "北京中通数字高尔夫体验店",
+            "payType": "0",
+            "coachId": "",
+            "coachName": "",
+            "coachLevel": "",
+            "coachGender": "",
+            "serviceType": "场地预约",
+            "posid": "u15po15atgi",
+            "hitposition": "影音间",
+            "totalFee": 0.03,
+            "orderDate": "2022-12-16",
+            "orderTime": "2022-12-14 11:11:59",
+            "startTime": "2022-12-09 11:00",
+            "endTime": "2022-12-09 13:00",
+            "duration": "2",
+            "payManner": 4,
+            "golfcardOrderId": "202212131619278564724775",
+            "status": 3,
+            "ing": 0,
+            "remarks": "",
+            "TimeStamp": 1670981260435,
+            "_id": "63993f002ce29835c5920551"
+        },
+        .......
+    ]
 }
 或者
 {			
