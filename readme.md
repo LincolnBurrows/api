@@ -4003,3 +4003,61 @@ get https://yunying.digitgolf.com/w/searchClubBillSomeDaysOfDetail?clubId=101&or
 }
 ```
 
+#### 70 获取用户的充值记录（分页）
+
+get https://yunying.digitgolf.com/w/getUserChargeInfo?clubId=101&openid=o99bm4gcIfeTgVjaWspYoPJv9XHI&pageIndex=1&pageSize=1
+
+```
+{
+	clubId:101, // 门店id
+	openid:o99bm4gcIfeTgVjaWspYoPJv9XHI, // 用户openid
+	pageIndex:1, // 页码
+	pageSize:1 // 每页显示数量
+}
+```
+
+```
+{
+    "code": 0,
+    "msg": "success",
+    "count": 4, // 充值记录总数
+    "data": [
+        {
+            "xtype": 0, // 类型， 充值
+            "chargeOrderId": "202212131539436614539318", // 充值订单id
+            "transaction_id": "4200001658202212131689667796", // 微信支付订单号 
+            "clubId": "101", // 门店id
+            "openid": "o99bm4gcIfeTgVjaWspYoPJv9XHI", // 用户openid
+            "money": 1000, // 充值后余额金额 (本金)
+            "gift": 10, // 充值后余额赠额
+            "totalFee": 0.1, //充值金额
+            "status": 1, // 1：充值成功 status=5是已退款, 注: 目前没有退款
+            "orderDate": "2022-12-13", //充值日期
+            "orderTime": "2022-12-13 15:39:43", //充值具体时间
+            "TimeStamp": 1670903622368, // 时间戳
+            "_id": "63982c3fd8d1ea19a1f24e5f"
+        },
+        { // 同上
+            "xtype": 0,
+            "chargeOrderId": "202211281002137434386607",
+            "transaction_id": "4200001638202211281541064761",
+            "clubId": "101",
+            "openid": "o99bm4gcIfeTgVjaWspYoPJv9XHI",
+            "money": 1000,
+            "gift": 10,
+            "totalFee": 0.1,
+            "status": 1,
+            "orderDate": "2022-11-28",
+            "orderTime": "2022-11-28 10:02:13",
+            "TimeStamp": 1668657837098,
+            "_id": "638416a517acd67da43fd14e"
+        }
+    ]
+}
+或者
+{
+	code:1,
+	msg:'fail'
+}
+```
+
