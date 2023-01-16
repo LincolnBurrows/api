@@ -3605,17 +3605,17 @@ get  https://yunying.digitgolf.com/w/getClubCoachBillDetail?orderDate=2022-12-13
 
 #### 58.1 查询门店教练范围内的账单明细(分页)，比如最近7天，一个月或者搜索日期范围内的
 
-get  https://yunying.digitgolf.com/w/getClubCoachBillDetail?orderDateStart=2022-12-13&orderDateEnd=2022-12-14&clubId=101&pageIndex=1&pageSize=4&xtype=0&coachId=63637ef4cf86df5a1cd7ec8a
+get  https://yunying.digitgolf.com/w/getClubCoachBillDetailOfSomeDays?orderDateStart=2023-01-15&orderDateEnd=2023-01-16&clubId=101&pageIndex=1&pageSize=4&xtype=0&coachId=6363788ef2e0f558f98db7ef
 
 ```
 {
-	orderDateStart:2022-12-13,  // 搜索开始日期，格式如2022-12-13
-	orderDateEnd:2022-12-14, // 搜索结束日期， 格式如2022-12-14
+	orderDateStart:2023-01-15,  // 搜索开始日期，格式如2022-01-15
+	orderDateEnd:2022-01-16, // 搜索结束日期， 格式如2022-01-16
 	clubId:101, // 门店id
 	pageIndex:1, // 页码
 	pageSize:4, // 每页显示数量
 	xtype:0, // 预约课程0或者视频课程1
-	coachId:63637ef4cf86df5a1cd7ec8a // 教练id
+	coachId:6363788ef2e0f558f98db7ef // 教练id
 }
 ```
 
