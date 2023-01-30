@@ -312,6 +312,9 @@
         serviceType:{type:String, default:'打球'}, //服务类型， 打球， 其他
         posid:{type:String, default:''}, //打位id
         hitposition: {type: String, default:""},    //打位名称  1号打位
+        type: {type: Number, default: 0},  //0:普通打位; 1:无人值守
+        doorAccessSN: {type: String, default:""}, //门禁设备号
+        gatewaySN: {type: String, default:""},    //网关序列号
         totalFee: {type: Number, default: 0},//总价
         orderDate:{type: String, default:""}, //要预约日期
         orderTime:{type: String, default:""}, //下预约订单的时间点
@@ -493,7 +496,10 @@ post	 https://yunying.digitgolf.com/golfclub/addhitpos
 {
     clubId:'100', //门店id
     posname: '包间2', //打位名称
-    type:'0', //0 普通打位 1 无人值守
+    type:'1', //0 普通打位 1 无人值守
+    doorAccessSN:0,
+	gatewaySN:'WG593OWAN21122901xxx',
+	devSN:'xiaohuisuoxxx',
     posimg: "https://yunying.digitgolf.com/images/8c6xabkfnin.jpg", // 打位照片
     priceList:[
       {
