@@ -2236,6 +2236,9 @@ post   https://yunying.digitgolf.com/golfclub/edithitpos
     posname: '包间2', //打位名称
     posimg: "https://yunying.digitgolf.com/images/8c6xabkfnin.jpg", // 打位照片
     type:'0', //0 普通打位 1 无人值守
+    doorAccessSN:'', //门禁设备号, 代表不同的门店
+    gatewaySN:'', //网关序列号
+    devSN:'', //网关设备序号(网关配置里面,可以用来指示打位)
     priceList: [
       {
         week: 1,  //星期一
