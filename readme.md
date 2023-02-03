@@ -4070,7 +4070,7 @@ get https://yunying.digitgolf.com/w/getUserChargeInfo?clubId=101&openid=o99bm4gc
 }
 ```
 
-#### 71修改用户基础信息（比如昵称，手机号，本金，赠额）
+#### 71 修改用户基础信息（比如昵称，手机号，本金，赠额）
 
 get https://yunying.digitgolf.com/w/editUserBaseInfo?clubId=101&openid=o99bm4qIsvZ36fht3jnqZJZ8Yn8U&option=4&data=200
 
