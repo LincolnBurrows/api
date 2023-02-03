@@ -1,4 +1,4 @@
-#### 0 文档模型参数说明
+## 文档模型参数说明
 
 ```
 1 教练模型
@@ -377,7 +377,7 @@
 }
 ```
 
-
+## 后台网站接口
 
 #### 1 添加教练信息
 
@@ -4064,6 +4064,50 @@ get https://yunying.digitgolf.com/w/getUserChargeInfo?clubId=101&openid=o99bm4gc
     ]
 }
 或者
+{
+	code:1,
+	msg:'fail'
+}
+```
+
+#### 71修改用户基础信息（比如昵称，手机号，本金，赠额）
+
+get https://yunying.digitgolf.com/w/editUserBaseInfo?clubId=101&openid=o99bm4qIsvZ36fht3jnqZJZ8Yn8U&option=4&data=200
+
+```
+{
+	clubId:'101',
+	openid:'o99bm4qIsvZ36fht3jnqZJZ8Yn8U',
+	option:'4', // 1 昵称（对应data传昵称） ，2 手机号（对应data传手机号） ，3 本金（对应data传数字），4 赠额（对应data传数字）
+	data:'200'
+}
+```
+
+```
+{
+	code:0,
+	nickName:'xiaohong',
+	msg:'success'
+}
+或
+{
+	code:0,
+	phone:'10086',
+	msg:'success'
+}
+或
+{
+	code:0,
+	money:2000,
+	msg:'success'
+}
+或
+{
+	code:0,
+	gift:200,
+	msg:'success'
+}
+或
 {
 	code:1,
 	msg:'fail'
