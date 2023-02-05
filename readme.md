@@ -1166,6 +1166,11 @@ pageSize:'5', //每页数量
             "duration": "1", //预约时长
             "payManner": 1, // 支付方式 0 微信支付 1 余额支付 2 还没有支付 3 后台支付 4 卡支付
             "golfcardOrderId": "", //如果是卡支付,则设置卡的golfcardOrderId
+            "golfcardPayTimes":1, // 卡支付次数，默认都是1次，UI的使用本金参数
+        	"beforeGolfcardPayCardTimes":0, // 卡支付之前本金剩余次数，UI的卡支付记录的使用前剩余本金
+        	"afterGolfcardPayCardTimes":0, // 卡支付之后本金剩余次数，UI的卡支付记录的使用后剩余本金
+        	"beforeGolfcardPayGiveTimes":0, // 卡支付之前赠额剩余次数，UI的卡支付记录的使用前剩余赠额
+       		"afterGolfcardPayGiveTimes":0, // 卡支付之后赠额剩余次数，UI的卡支付记录的使用后剩余赠额
             "status": 3, //预约订单状态 0：待付款 1：待使用 2：已取消 3：已使用 4：进行中 注：过期未使用也算已使用 status=5是已退款
             "remarks": "", // 备注信息
             "TimeStamp": 1662030004930, // 时间戳
@@ -1196,6 +1201,11 @@ pageSize:'5', //每页数量
             "duration": "1",
             "payManner": 1,
             "golfcardOrderId": "",
+            "golfcardPayTimes":1, // 卡支付次数，默认都是1次，UI的使用本金参数
+        	"beforeGolfcardPayCardTimes":0, // 卡支付之前本金剩余次数，UI的卡支付记录的使用前剩余本金
+        	"afterGolfcardPayCardTimes":0, // 卡支付之后本金剩余次数，UI的卡支付记录的使用后剩余本金
+        	"beforeGolfcardPayGiveTimes":0, // 卡支付之前赠额剩余次数，UI的卡支付记录的使用前剩余赠额
+       		"afterGolfcardPayGiveTimes":0, // 卡支付之后赠额剩余次数，UI的卡支付记录的使用后剩余赠额
             "status": 3,
             "remarks": "",
             "TimeStamp": 1662029878668,
@@ -1226,6 +1236,11 @@ pageSize:'5', //每页数量
             "duration": "1",
             "payManner": 1,
             "golfcardOrderId": "",
+            "golfcardPayTimes":1, // 卡支付次数，默认都是1次，UI的使用本金参数
+        	"beforeGolfcardPayCardTimes":0, // 卡支付之前本金剩余次数，UI的卡支付记录的使用前剩余本金
+        	"afterGolfcardPayCardTimes":0, // 卡支付之后本金剩余次数，UI的卡支付记录的使用后剩余本金
+        	"beforeGolfcardPayGiveTimes":0, // 卡支付之前赠额剩余次数，UI的卡支付记录的使用前剩余赠额
+       		"afterGolfcardPayGiveTimes":0, // 卡支付之后赠额剩余次数，UI的卡支付记录的使用后剩余赠额
             "status": 3,
             "remarks": "",
             "TimeStamp": 1662029586895,
@@ -1256,6 +1271,11 @@ pageSize:'5', //每页数量
             "duration": "1",
             "payManner": 1,
             "golfcardOrderId": "",
+            "golfcardPayTimes":1, // 卡支付次数，默认都是1次，UI的使用本金参数
+        	"beforeGolfcardPayCardTimes":0, // 卡支付之前本金剩余次数，UI的卡支付记录的使用前剩余本金
+        	"afterGolfcardPayCardTimes":0, // 卡支付之后本金剩余次数，UI的卡支付记录的使用后剩余本金
+        	"beforeGolfcardPayGiveTimes":0, // 卡支付之前赠额剩余次数，UI的卡支付记录的使用前剩余赠额
+       		"afterGolfcardPayGiveTimes":0, // 卡支付之后赠额剩余次数，UI的卡支付记录的使用后剩余赠额
             "status": 3,
             "remarks": "",
             "TimeStamp": 1662029337101,
@@ -1286,6 +1306,11 @@ pageSize:'5', //每页数量
             "duration": "1",
             "payManner": 1,
             "golfcardOrderId": "",
+            "golfcardPayTimes":1, // 卡支付次数，默认都是1次，UI的使用本金参数
+        	"beforeGolfcardPayCardTimes":0, // 卡支付之前本金剩余次数，UI的卡支付记录的使用前剩余本金
+        	"afterGolfcardPayCardTimes":0, // 卡支付之后本金剩余次数，UI的卡支付记录的使用后剩余本金
+        	"beforeGolfcardPayGiveTimes":0, // 卡支付之前赠额剩余次数，UI的卡支付记录的使用前剩余赠额
+       		"afterGolfcardPayGiveTimes":0, // 卡支付之后赠额剩余次数，UI的卡支付记录的使用后剩余赠额
             "status": 3,
             "remarks": "",
             "TimeStamp": 1662029337101,
@@ -1339,6 +1364,11 @@ get   https://yunying.digitgolf.com/w/getOrderInfoByStatus?clubId=101&pageIndex=
             "duration": "1",
             "payManner": 1,
             "golfcardOrderId": "",
+            "golfcardPayTimes":1, // 卡支付次数，默认都是1次，UI的使用本金参数
+        	"beforeGolfcardPayCardTimes":0, // 卡支付之前本金剩余次数，UI的卡支付记录的使用前剩余本金
+        	"afterGolfcardPayCardTimes":0, // 卡支付之后本金剩余次数，UI的卡支付记录的使用后剩余本金
+        	"beforeGolfcardPayGiveTimes":0, // 卡支付之前赠额剩余次数，UI的卡支付记录的使用前剩余赠额
+       		"afterGolfcardPayGiveTimes":0, // 卡支付之后赠额剩余次数，UI的卡支付记录的使用后剩余赠额
             "status": 1,
             "remarks": "",
             "TimeStamp": 1662108063809,
