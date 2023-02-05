@@ -323,6 +323,11 @@
         duration:{type:String, default:""}, //订单时长
         payManner:{type:Number, default:2}, //支付方式 0 微信支付 1 余额支付 2 还没有支付 3 后台支付 4 卡支付
         golfcardOrderId:{type:String, default:''}, // 如果是卡支付,则设置卡的golfcardOrderId
+        golfcardPayTimes:{type:Number, default:1}, // 卡支付次数，默认都是1次，UI的使用本金参数
+        beforeGolfcardPayCardTimes:{type:Number, default:0}, // 卡支付之前本金剩余次数，UI的卡支付记录的使用前剩余本金
+        afterGolfcardPayCardTimes:{type:Number, default:0}, // 卡支付之后本金剩余次数，UI的卡支付记录的使用后剩余本金
+        beforeGolfcardPayGiveTimes:{type:Number, default:0}, // 卡支付之前赠额剩余次数，UI的卡支付记录的使用前剩余赠额
+        afterGolfcardPayGiveTimes:{type:Number, default:0}, // 卡支付之后赠额剩余次数，UI的卡支付记录的使用后剩余赠额
         status: {type: Number, default: 0},  //预约订单状态 0：待付款 1：待使用 2：已取消 3：已使用 4：进行中 注：过期未使用也算已使用 status=5是已退款
         ing:{type:Number,default:0}, // 待使用的订单是否为进行中 默认0 不是进行中，1是进行中，后台查询进行中预约订单时回更新
         remarks: {type:String, default:"打球"}, //订单备注信息
