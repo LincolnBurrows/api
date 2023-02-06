@@ -1,7 +1,8 @@
 ## 文档模型参数说明
 
+#### 1 教练模型
+
 ```
-1 教练模型
 {
     "_id" : ObjectId("630f0e5e0c9ac64f1f602b52"), // 教练id，有地方也有于coachId
     "clubId" : "100", // 教练所属门店id
@@ -35,8 +36,11 @@
     ],
     "introduction" : "好教练" // 教练介绍
 }
+```
 
-2 教练账单模型
+#### 2 教练账单模型
+
+```
 {
     "_id" : ObjectId("63bd1e8b67bbc82748b53af7"),
     "xtype" : 0, // 类型, 预约课程0或者视频课程1
@@ -55,8 +59,11 @@
     "dividFee" : 50, //分成金额
     "TimeStamp" : 1670901586000.0 // 时间戳
 }
+```
 
-3 微信支付充值记录模型
+#### 3 微信支付充值记录模型
+
+```
 {
     "_id" : ObjectId("6307128684be080d25b801e4"),
     "xtype" : 0, // 类型
@@ -70,8 +77,11 @@
     "orderTime" : "2022-08-25 14:11:18", //充值具体时间
     "TimeStamp" : 1661393028201.0 // 时间戳
 }
+```
 
-4 高尔夫卡订单记录模型
+#### 4 高尔夫卡订单记录模型
+
+```
 {
     "_id" : ObjectId("63a4398899b74b61b7ede330"),
     "xtype" : 2, // 类型
@@ -116,8 +126,11 @@
     "status" : 2, //订单状态 0：待付款 1：待使用 2：已取消 3：订单已过期 注：过期未使用也算已使用 5：已退款 6:退款中（已使用次数的卡需后台审批）7:售后退款已删除 8 审批失败
     "TimeStamp" : 1671103729103.0 //时间戳
 }
+```
 
-5 高尔夫卡模型 
+#### 5 高尔夫卡模型 
+
+```
 {
     "_id" : ObjectId("62d1168b6f88ec3ad8c55f9c"),
     "cardId" : "1001", // 卡id
@@ -149,8 +162,11 @@
     "TimeStamp" : 1666853325568.0,  //时间戳	
     "saleCount" : 0 // 销量
 }
+```
 
-6 门店模型
+#### 6 门店模型
+
+```
 {
 	    clubId: {type: String, default: ""},  // 门店id
 		clubType: {type: Number, default: 0},  //0：非无人值守  1：无人值守
@@ -255,8 +271,12 @@
 			} */
 		] 
 }
+```
 
-7 钱包moeny模型
+#### 7 钱包money模型
+
+```
+
 {
 		clubId: {type: String, default: ""}, // 高尔夫门店id
         golfClub: {type:String, default:""}, //高尔夫门店名称
@@ -293,8 +313,11 @@
 		storeRefundTimes:{type:Number, default:0}, // 商城退款次数
 		totalOrderCount:{type:Number, default:0} // 订单总数
 }
-	
-8 预约订单模型
+```
+
+#### 8 预约订单模型
+
+```
 {
         xtype:{type:Number, default:1}, //record类型
         orderId: {type:String, default:""}, //预约订单id
@@ -333,8 +356,11 @@
         remarks: {type:String, default:"打球"}, //订单备注信息
         TimeStamp:{type:Number, default: moment().valueOf()}  //时间戳
 }
- 
- 9 退款次数记录模型
+```
+
+#### 9 退款次数记录模型
+
+```
  {
 		clubId: {type: String, default: ""}, // 门店ID
 		openid: {type: String, default: ''}, // 用户
@@ -342,8 +368,11 @@
         moneyrefundTimes:{type:Number, default:0}, // 余额支付取消预约次数
         cardrefundTimes:{type:Number, default:0}, // 卡支付取消预约次数
 }
+```
 
-10 用户模型
+#### 10 用户模型
+
+```
 {
 		nickName: {type: String, default: ''}, // 昵称
 		phone: {type: String, default: ''}, //手机号
@@ -369,8 +398,11 @@
 		status:{type:Number, default:0},  //用户状态 0:正常 1:封停
 		lastOrderTime:{type: String, default:''} // 最后预约时间，订单开始时间
 }
+```
 
-11 后台管理员账号模型
+#### 11 后台管理员账号模型
+
+```
 {
 		userName: {type: String, default: 'admin'}, //账号
 		passWord: {type: String, default: 'admin'}, // 密码
@@ -381,6 +413,8 @@
 		avatar:{type: String, default: ''} //头像
 }
 ```
+
+
 
 ## 后台网站接口
 
