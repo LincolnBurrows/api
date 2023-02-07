@@ -4183,3 +4183,28 @@ get https://yunying.digitgolf.com/w/editUserBaseInfo?clubId=101&openid=o99bm4qIs
 }
 ```
 
+#### 72 后台修改用户卡订单（改卡）
+
+get https://yunying.digitgolf.com/w/editUserGolfcardOrder?_id=63e07d4f115ed7653c055cb6&cardTimes=10&giveTimes=10&timeValid=20
+
+```
+{
+	_id:63e07d4f115ed7653c055cb6, // 查看卡订单返回参数_id
+	cardTimes:10, // 剩余本金 次数
+	giveTimes:10, // 剩余赠额 次数
+	timeValid:20
+}
+```
+
+```
+{
+	code:0,
+	msg:'SUCCESS'
+}
+或者
+{			
+	code:1,
+	msg:'fail'
+}
+```
+
