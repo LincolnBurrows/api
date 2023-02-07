@@ -4192,7 +4192,7 @@ get https://yunying.digitgolf.com/w/editUserGolfcardOrder?_id=63e07d4f115ed7653c
 	_id:63e07d4f115ed7653c055cb6, // 查看卡订单返回参数_id
 	cardTimes:10, // 剩余本金 次数
 	giveTimes:10, // 剩余赠额 次数
-	timeValid:20
+	timeValid:20 // 有效天数
 }
 ```
 
