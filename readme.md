@@ -2942,6 +2942,10 @@ post  https://yunying.digitgolf.com/golfclub/addTemplate
     _menu_restaurant:'1', //点餐
     _menu_onlineTeaching:'1', 线上授课
     _menu_videoCourse:'1', //视频课程
+    // 又增加了3个按钮
+	_menu_playVideo: '1', //  打球视频
+	_menu_scoreCard: '1',  // 记分卡
+	_menu_trainData: '1', // 练习数据
 
     // 第三部分 
     _imgadstyle:"4", //广告图显示样式 '1', '2', '3', '4'
