@@ -414,6 +414,22 @@
 }
 ```
 
+#### 12 充值卡模型
+
+```
+{
+        chargecardName:{type:String, default:'充值卡'}, // 充值卡名称 
+        status:{type:Number, default:1}, // 充值卡状态， 0 禁用 1 启用(默认)
+        kind:{type:Number, default:1}, // 类型， 0 赠送优惠券  1 赠送金额(默认) 2 不赠送
+        golfClub:{type: String,default:''}, //高尔夫门店名称
+		clubId:{type:String, default:""}, //高尔夫门店id
+        base:{type:Number, default:0}, // 充值卡底金
+        give:{type:Number, default:0}, // 赠送金额
+		remarks:{type:String, default:''}, //备注
+		TimeStamp:{type:Number, default: moment().valueOf()},  //时间戳	
+}
+```
+
 
 
 ## 后台网站接口
