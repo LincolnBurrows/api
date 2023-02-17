@@ -4228,3 +4228,220 @@ get https://yunying.digitgolf.com/w/editUserGolfcardOrder?_id=63e07d4f115ed7653c
 }
 ```
 
+#### 73 添加充值卡
+
+post  https://yunying.digitgolf.com/chargecard/add
+
+```
+{
+	chargecardName:充值卡1,  //充值卡名称
+    kind:1,  //类型， 0 赠送优惠券  1 赠送金额(默认) 2 不赠送
+    golfClub:北京中通数字高尔夫体验店, //门店名称
+    clubId:101, //门店id //充值卡底金
+    base:100, //充值卡底金
+    give:10 // 赠送金额
+}
+```
+
+```
+{
+	
+                code:0,
+                data:{
+                    _id: d._id, // 充值卡_id参数
+                },
+                msg:'success'
+            }
+}
+
+{
+                code:1,
+                msg:'fail'
+}
+```
+
+#### 74 禁用或启用充值卡
+
+post https://yunying.digitgolf.com/chargecard/editStatus
+
+```
+{
+    _id:63eeef4d10f81371f2e8ea05,
+    status:0  //充值卡状态， 0 禁用 1 启用(默认)
+}
+```
+
+```
+{
+                        code:0,
+                        msg:'success'
+ }
+ 
+ {
+                        code:1,
+                        msg:'fail'
+}
+```
+
+#### 75 查找门店下的所有充值卡
+
+get  https://yunying.digitgolf.com/chargecard/findAll?clubId=101
+
+```
+{
+	clubId:101   // 门店id
+}
+```
+
+```
+{
+    "code": 0,
+    "data": [
+        {
+            "chargecardName": "充值卡1",
+            "status": 0,
+            "kind": 1,
+            "golfClub": "北京中通数字高尔夫体验店",
+            "clubId": "101",
+            "base": 100,
+            "give": 10,
+            "remarks": "",
+            "TimeStamp": 1676602854238,
+            "_id": "63eeef4d10f81371f2e8ea05"
+        }
+    ],
+    "msg": "success"
+}
+
+{
+                code:1,
+                msg:'fail'
+}
+```
+
+####  76 删除门店下的某个充值卡
+
+get  https://yunying.digitgolf.com/chargecard/delChargecard?_id=63eeef4d10f81371f2e8ea05
+
+```
+{
+	_id:63eeef4d10f81371f2e8ea05
+}
+```
+
+```
+{
+                        code:0,
+                        msg:'success'
+ }
+ 
+ {
+                        code:1,
+                        msg:'fail'
+}
+```
+
+#### 77  按状态查找门店下的充值卡
+
+get   https://yunying.digitgolf.com/chargecard/findByStatus?clubId=101&status=1
+
+```
+{
+	clubId:101, // 门店id
+	status:1  // 充值卡状态， 0 禁用 1 启用(默认)
+}
+```
+
+
+
+```
+{
+    "code": 0,
+    "data": [
+        {
+            "chargecardName": "充值卡2",
+            "status": 1,
+            "kind": 1,
+            "golfClub": "北京中通数字高尔夫体验店",
+            "clubId": "101",
+            "base": 100,
+            "give": 10,
+            "remarks": "",
+            "TimeStamp": 1676602854238,
+            "_id": "63eef0c710f81371f2e8ea06"
+        },
+        {
+            "chargecardName": "充值卡3",
+            "status": 1,
+            "kind": 1,
+            "golfClub": "北京中通数字高尔夫体验店",
+            "clubId": "101",
+            "base": 100,
+            "give": 10,
+            "remarks": "",
+            "TimeStamp": 1676602854238,
+            "_id": "63eef0e410f81371f2e8ea07"
+        }
+    ],
+    "msg": "success"
+}
+
+{
+                code:1,
+                msg:'fail'
+}
+```
+
+#### 78 按名称查找门店下充值卡
+
+get   https://yunying.digitgolf.com/chargecard/findByName?clubId=101&chargecardName=充值卡
+
+```
+{
+	clubId:101,
+	chargecardName:充值卡
+}
+```
+
+```
+{
+    "code": 0,
+    "data": [],
+    "msg": "success"
+}
+
+
+{
+                code:1,
+                msg:'fail'
+}
+```
+
+#### 79 编辑充值卡的全部信息
+
+post  https://yunying.digitgolf.com/chargecard/editCardInfo
+
+```
+{
+	_id:63eef0c710f81371f2e8ea06,
+    chargecardName:充值卡,    //名称
+    status:1, // 充值卡状态， 0 禁用 1 启用(默认)
+    kind:1,  //类型， 0 赠送优惠券  1 赠送金额(默认) 2 不赠送
+    golfClub:北京中通数字高尔夫体验店,  // 门店名称 
+    base:200, // 充值卡底金
+    give:20 // 赠送金额
+}
+```
+
+```
+{
+                        code:0,
+                        msg:'success'
+ }
+ 
+ {
+                        code:1,
+                        msg:'fail'
+}
+```
+
