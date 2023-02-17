@@ -124,6 +124,9 @@
     "dealTime" : "", //成交时间
     "payManner" : 2, //支付方式 0 微信支付 1 余额支付 2 还没有支付 3 后台支付
     "status" : 2, //订单状态 0：待付款 1：待使用 2：已取消 3：订单已过期 注：过期未使用也算已使用 5：已退款 6:退款中（已使用次数的卡需后台审批）7:售后退款已删除 8 审批失败
+    isDel:{type:Number, default:0}, // 用户的卡订单是否被删除， 默认是保留状态， 0：保留， 1:已被用户删除查询则不显示
+	isAdmin:{type:Number, default:0}, // 是否后台管理员办卡,  0 小程序端办卡  1 后台办卡,如果是后台办卡直接将status变成待使用(status=1)
+	reason:{type:String, default:''} , // 退款原因
     "TimeStamp" : 1671103729103.0 //时间戳
 }
 ```
@@ -354,6 +357,7 @@
         status: {type: Number, default: 0},  //预约订单状态 0：待付款 1：待使用 2：已取消 3：已使用 4：进行中 注：过期未使用也算已使用 status=5是已退款
         ing:{type:Number,default:0}, // 待使用的订单是否为进行中 默认0 不是进行中，1是进行中，后台查询进行中预约订单时回更新
         remarks: {type:String, default:"打球"}, //订单备注信息
+        reason:{type:String, default:''}, // 退款原因
         TimeStamp:{type:Number, default: moment().valueOf()}  //时间戳
 }
 ```
