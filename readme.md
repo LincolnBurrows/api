@@ -2616,14 +2616,16 @@ get   http://yunying.digitgolf.com/golfcard/editcardstatus?_id=6347df5cc9d16f1ae
 
 #### 31 设置门店预约支付类型 预约有支付和预约无支付 
 
-get    https://yunying.digitgolf.com/w/editClubpayType?_id=62cf9ff40c94de1934a4cdea&payType=1  
+post   https://yunying.digitgolf.com/w/editClubpayType 
 
 ```
 {
 	_id:'62cf9ff40c94de1934a4cdea',
 	payType:'1', // 支付类型 0不支持线上支付  1 支持线上支付
 	cancelLimitHour: 2, //默认2小时 提前几个小时取消预约不扣费，限制小时之内取消卡支付的扣除次数，微信和余额支付的扣除金额的百分比
-	cancelPercent:0  //取消扣除费用的百分比, 传小数,比如0.1
+	cancelPercent:0,  //取消扣除费用的百分比, 传小数,比如0.1
+	logo:'', // 门店logo，登录界面显示的图片
+	protocol：'' // 用户协议
 }
 ```
 
