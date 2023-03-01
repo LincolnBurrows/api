@@ -211,7 +211,7 @@
 		openTime:{type:String, default:"00:00:00"}, //营业开门时间
 		closeTime:{type:String, default:"24:00:00"}, //营业关门时间
 		cancelLimitHour:{type:Number, default:2}, //默认2小时 提前几个小时取消预约不扣费，限制小时之内取消卡支付的扣除次数，微信和余额支付的扣除金额的百分比
-		cancelPercent:{type:Number, default:0}, //取消扣除费用的百分比， 传小数， 比如0.1
+		cancelPercent:{type:Number, default:0}, //取消扣除费用的百分比， 比如1就是1%
 		displayCoach:[{}], // 展示的教练
 		displayGolfcardstyle:{type:String, default:"1"}, //高尔夫卡显示样式 '1'竖放  '2'横放
 		displayGolfcard:[{}], // 展示的高尔夫卡
@@ -342,10 +342,11 @@
         doorAccessSN: {type: String, default:""}, //门禁设备号
         gatewaySN: {type: String, default:""},    //网关序列号
         totalFee: {type: Number, default: 0},//总价
-        orderDate:{type: String, default:""}, //要预约日期
-        orderTime:{type: String, default:""}, //下预约订单的时间点
-        startTime: {type:String, default:""}, //订单开始时间
-        endTime: {type: String, default:""}, //订单结束时间
+        refund_Fee: {type: Number, default: 0},//如果取消预约，则为退费的金额
+        orderDate:{type: String, default:""}, //要预约日期 格式 YYYY-MM-DD
+        orderTime:{type: String, default:""}, //下预约订单的时间点 格式 YYYY-MM-DD HH:mm:ss
+        startTime: {type:String, default:""}, //订单开始时间 格式 YYYY-MM-DD HH:mm:ss
+        endTime: {type: String, default:""}, //订单结束时间 格式 YYYY-MM-DD HH:mm:ss
         duration:{type:String, default:""}, //订单时长
         payManner:{type:Number, default:2}, //支付方式 0 微信支付 1 余额支付 2 还没有支付 3 后台支付 4 卡支付
         golfcardOrderId:{type:String, default:''}, // 如果是卡支付,则设置卡的golfcardOrderId
