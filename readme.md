@@ -342,7 +342,7 @@
         doorAccessSN: {type: String, default:""}, //门禁设备号
         gatewaySN: {type: String, default:""},    //网关序列号
         totalFee: {type: Number, default: 0},//总价
-        refund_Fee: {type: Number, default: 0},//如果取消预约，则为退费的金额
+        refundFee: {type: Number, default: 0},//如果取消预约，则为退费的金额
         orderDate:{type: String, default:""}, //要预约日期 格式 YYYY-MM-DD
         orderTime:{type: String, default:""}, //下预约订单的时间点 格式 YYYY-MM-DD HH:mm:ss
         startTime: {type:String, default:""}, //订单开始时间 格式 YYYY-MM-DD HH:mm:ss
