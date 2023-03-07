@@ -127,6 +127,7 @@
     isDel:{type:Number, default:0}, // 用户的卡订单是否被删除， 默认是保留状态， 0：保留， 1:已被用户删除查询则不显示
 	isAdmin:{type:Number, default:0}, // 是否后台管理员办卡,  0 小程序端办卡  1 后台办卡,如果是后台办卡直接将status变成待使用(status=1)
 	reason:{type:String, default:''} , // 退款原因
+	isSend:{type:Number, default:0} // 是否赠送实体礼品 0: 不赠送  1：赠送
     "TimeStamp" : 1671103729103.0 //时间戳
 }
 ```
@@ -163,7 +164,8 @@
     "coachlogo" : "https://wxmini-digitgolf-yunying.oss-cn-beijing.aliyuncs.com/%E5%8C%97%E4%BA%ACcity%E9%AB%98%E5%B0%94%E5%A4%AB%E5%BA%97/coachlogo.jpg", //教练logo
     "isRecommend" : "1", //是否设置为推荐课程卡 0 不设置  1设置
     "TimeStamp" : 1666853325568.0,  //时间戳	
-    "saleCount" : 0 // 销量
+    "saleCount" : 0, // 销量
+    isSend:{type:Number, default:0} // 是否赠送实体礼品 0: 不赠送  1：赠送
 }
 ```
 
@@ -184,6 +186,14 @@
 		menu_restaurant:{type: String, default: '1'}, //点餐
 		menu_onlineTeaching:{type: String, default: '1'}, //线上授课
 		menu_videoCourse:{type: String, default: '1'},// 线上课程
+		
+		// 又增加3个按钮
+		menu_playVideo: {type: String, default: '1'}, //打球视频
+		menu_scoreCard: {type: String, default: '1'}, //记分卡
+		menu_trainData: {type: String, default: '1'},// 练习数据
+
+		// 又增加1个按钮
+		menu_chargeCard:{type: String, default:'1'}, // 充值卡， 储值卡
 
 		orderPos:{type: String, default: '1'}, //约场地
 		orderCoach:{type: String, default: '1'}, //约教练
@@ -240,6 +250,13 @@
 				_menu_restaurant:'1',
 				_menu_onlineTeaching:'1',
 				_menu_videoCourse:'1',
+				// 又增加3个按钮
+				_menu_playVideo: '1', //打球视频
+				_menu_scoreCard: '1', //记分卡
+				_menu_trainData: '1',// 练习数据
+
+				// 又增加1个按钮
+				_menu_chargeCard:'1', // 充值卡， 储值卡
 
 				// 第三部分 
 				_imgad:[],
@@ -2969,6 +2986,8 @@ post  https://yunying.digitgolf.com/golfclub/addTemplate
 	_menu_playVideo: '1', //  打球视频
 	_menu_scoreCard: '1',  // 记分卡
 	_menu_trainData: '1', // 练习数据
+	// 又增加了1个按钮
+	_menu_chargeCard:'1', // 充值卡，储值卡
 
     // 第三部分 
     _imgadstyle:"4", //广告图显示样式 '1', '2', '3', '4'
