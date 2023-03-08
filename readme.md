@@ -441,13 +441,17 @@
 ```
 {
         chargecardName:{type:String, default:'充值卡'}, // 充值卡名称 
+        description:{type:String, default:''}, // 充值卡介绍
         status:{type:Number, default:1}, // 充值卡状态， 0 禁用 1 启用(默认)
-        kind:{type:Number, default:1}, // 类型， 0 赠送优惠券  1 赠送金额(默认) 2 不赠送
         golfClub:{type: String,default:''}, //高尔夫门店名称
 		clubId:{type:String, default:""}, //高尔夫门店id
+		price:{type:Number, default:0}, // 充值卡价格
         base:{type:Number, default:0}, // 充值卡底金
+        limit:{type:Number, default:0}, // 购买限制 0:无限制 1：限首次购卡用户 2：限每人购买几张
+        kind:{type:Number, default:1}, // 类型， 0:赠送优惠券  1:赠送金额(默认) 2:不赠送 3:赠送实物
         give:{type:Number, default:0}, // 赠送金额
 		remarks:{type:String, default:''}, //备注
+		imgurl:{type:String,default:''}, //缩略图
 		TimeStamp:{type:Number, default: moment().valueOf()},  //时间戳	
 }
 ```
@@ -4261,11 +4265,16 @@ post  https://yunying.digitgolf.com/chargecard/add
 ```
 {
 	chargecardName:充值卡1,  //充值卡名称
-    kind:1,  //类型， 0 赠送优惠券  1 赠送金额(默认) 2 不赠送
+    kind:1,  //类型，  0 赠送优惠券  1 赠送金额(默认) 2 不赠送 3:赠送实物
     golfClub:北京中通数字高尔夫体验店, //门店名称
     clubId:101, //门店id //充值卡底金
     base:100, //充值卡底金
     give:10 // 赠送金额
+    // 下面新加参数
+    description: '这是一张充值卡', // 描述
+    price:200,    // 价格
+    limit: 0  //购买限制 0:无限制 1：限首次购卡用户 2：限每人购买几张  其实设置N就是限制购买N张
+    imgurl:'https://exdsafdsa.jpg', //缩略图
 }
 ```
 
