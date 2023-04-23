@@ -456,7 +456,75 @@
 }
 ```
 
+#### 13 套餐模型
 
+```
+{
+        xtype:{type:Number, default:4}, // record类型
+        salePackOrderId:{type:String, default:''}, // 套餐订单号
+        transaction_id:{type:String, default:''}, //微信支付订单号, 用于申请退款
+        totalfee:{type:Number, default:0}, //订单总价
+        expireTime:{type:String, default:''}, //过期时间（购买时间+timeValid）
+        isExpire:{type:Number, default:0}, //是否过使用期限 0 没过 1过了
+
+        // 套餐信息
+        salepackId:{type:String, default:''}, // 购买的套餐id， _id参数
+        packName:{type: String, default:'大礼包'}, //套餐名称
+        packIntro:{type:String, default:''}, //套餐介绍
+        packImg:{type:String, default:''},  //封面图
+        golfClub:{type: String,default:''}, //高尔夫门店名称
+        clubId:{type:String, default:""}, //高尔夫门店id
+
+        packPrice:{type:String, default:''}, //价格
+        giveMoney:{type:Number, default:0}, // 赠送的本金
+        giveGift:{type:Number, default:0}, // 赠送的赠额
+        giveGood:{type:String, default:''}, // 赠送的实物
+        userAddr:{type:String, default:''}, // 用户收货地址
+        donorInfo:{type:String,default:''}, // 赠与人信息
+        giveShotTimes:{type:Number, default:0}, // 赠送的畅达次数
+        _giveShotTimes:{type:Number, default:0}, // 用于备份原有次数
+        giveCourseTimes:{type:Number, default:0}, // 赠送的课程次数
+        _giveCourseTimes:{type:Number, default:0}, // 用于备份原有次数
+        giveCourseCoachLevel:{type: Number, default:0},  //教练等级 0:初级教练  1:中级教练 2:高级教练 3:国家级教练  4:国际级教练 5:不限制
+        
+        remarks:{type:Number, default:0}, //购买限制备注：0：无限制，1：限首次购卡用户，N:限购N次
+
+        useRule:{type:String, default:'1天1次1小时'}, // 使用规则描述
+        dayLimit:{type:Number, default:1}, // 天数限制， 这个默认固定1
+        timesLimit:{type:Number, default:10}, // 次数限制
+        hoursLimit:{type:Number, default:1}, // 每次的小时限制，这个默认固定1
+
+        timesUsed:{type:Number, default:0}, // 当日使用次数
+
+        timeValid:{type:Number, default:0}, //购买后有效期天数
+        hitposLimit:{type:Number, default:0}, // 适用打位 0：适用全部 1：适用部分打位
+        hitpos:{type:Array, default:[ // 适用的打位列表, 如果hitposLimit是0，列表为空就行了
+            {
+                posid:String,
+                posname: String,
+                type: String
+            }
+        ]}, // 适用的打位信息
+
+        status:{type:Number, default:0}, //订单状态 0：待付款 1：待使用 2：已取消 3：订单已过期 注：过期未使用也算已使用 5：已退款 6:退款中（已使用次数的卡需后台审批）7:售后退款已删除 8 审批失败
+    
+        // 用户信息
+        openid:{type:String, default:''},  // 用户openid
+        nickName:{type:String, default:''}, // 用户昵称
+        phone:{type:String, default:''}, //用户手机号
+        money: {type:Number, default:0}, //购买后余额金额 (本金)
+        gift:{type:Number, default:0} , // 购买后赠额
+
+        orderDate:{type: String, default:""},  //购买日期
+        orderTime:{type: String, default:""},  //购买具体时间
+        payTime:{type:String, default:""}, //支付时间
+        dealTime:{type:String, default:""}, //成交时间
+        isDel:{type:Number, default:0}, // 用户的卡订单是否被删除， 默认是保留状态， 0：保留， 1:已被用户删除查询则不显示
+        isAdmin:{type:Number, default:0}, // 是否后台管理员买套餐,  0 小程序端买套餐  1 后台买套餐, 如果是后台买套餐直接将status变成待使用(status=1)
+        payManner:{type:Number, default:2 }, //支付方式 0 微信支付 1 余额支付 2 还没有支付 3 后台支付
+        TimeStamp:{type:Number, default: 0}  //时间戳	
+}
+```
 
 ## 后台网站接口
 
