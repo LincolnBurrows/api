@@ -181,7 +181,7 @@
 		// 菜单栏开启或关闭， 默认开启为1
 		menu_coursecard:{type: String, default: '1'}, //课程卡
 		menu_ecard:{type: String, default: '1'}, //E卡
-		menu_tehui:{type: String, default: '1'}, //限时特惠
+		menu_taocan:{type: String, default: '1'}, //套餐
 		menu_store:{type: String, default: '1'}, //商城
 		menu_restaurant:{type: String, default: '1'}, //点餐
 		menu_onlineTeaching:{type: String, default: '1'}, //线上授课
