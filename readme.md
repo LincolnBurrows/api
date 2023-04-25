@@ -99,7 +99,7 @@
     "coachLevel" : "初级教练",   //教练等级
     "timeValid" : "111",   //有效期天数
     "expireTime" : "",  //过期时间
-    "isExpire" : false,  //是否过使用期限
+    "isExpire" : 0,  //是否过使用期限, 0:没有过期 1：已过期
     "cardPrice" : 4000,   //价格
     "cardType" : "成人私教课",  //类型， 比如成人私教课、青少年私教课
     "cardTimes" : 23, //次数
