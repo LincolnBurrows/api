@@ -365,7 +365,7 @@
         startTime: {type:String, default:""}, //订单开始时间 格式 YYYY-MM-DD HH:mm:ss
         endTime: {type: String, default:""}, //订单结束时间 格式 YYYY-MM-DD HH:mm:ss
         duration:{type:String, default:""}, //订单时长
-        payManner:{type:Number, default:2}, //支付方式 0 微信支付 1 余额支付 2 还没有支付 3 后台支付 4 卡支付
+        payManner:{type:Number, default:2}, //支付方式 0: 微信支付 1: 余额支付 2: 还没有支付 3: 后台支付 4: 卡支付 5:套餐支付 6:混合支付（卡+余额(本金+赠额);卡+余额(本金+赠额)+微信;套餐+余额(本金+赠额);套餐+余额(本金+赠额)+微信）
         golfcardOrderId:{type:String, default:''}, // 如果是卡支付,则设置卡的golfcardOrderId
         golfcardPayTimes:{type:Number, default:1}, // 卡支付次数，默认都是1次，UI的使用本金参数
         beforeGolfcardPayCardTimes:{type:Number, default:0}, // 卡支付之前本金剩余次数，UI的卡支付记录的使用前剩余本金
